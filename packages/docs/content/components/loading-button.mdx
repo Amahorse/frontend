@@ -1,0 +1,51 @@
+---
+title: React Loading Button Component
+name: Loading Button
+description: React loading buttons are interactive elements that provide visual feedback to users, indicating that an action is being processed. These buttons typically display a loading spinner or animation.
+menu: Components
+route: /components/loading-button
+other_frameworks: loading-button
+pro_component: true
+---
+
+import { useState } from 'react'
+
+import { CLoadingButton } from '@coreui/react-pro/src/index'
+
+## Example
+
+Create basic React Loading Buttons with different styles: primary, outline, and ghost. These buttons show a loading state when clicked.
+
+```jsx preview
+<CLoadingButton color="primary" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="primary" variant="outline" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="primary" variant="ghost" timeout={2000}>Submit</CLoadingButton>
+```
+
+## Spinners
+
+### Border (Default)
+
+The default option. Use loading buttons with a border spinner to indicate loading status.
+
+```jsx preview
+<CLoadingButton color="info" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="success" variant="outline" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="warning" variant="ghost" timeout={2000}>Submit</CLoadingButton>
+```
+
+### Grow
+
+Switch to a grow spinner for React loading buttons by adding `spinnerType="grow"`.
+
+```jsx preview
+<CLoadingButton color="info" spinnerType="grow" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="success" spinnerType="grow" variant="outline" timeout={2000}>Submit</CLoadingButton>
+<CLoadingButton color="warning" spinnerType="grow" variant="ghost" timeout={2000}>Submit</CLoadingButton>
+```
+
+## API
+
+### CLoadingButton
+
+`markdown:CLoadingButton.api.mdx`

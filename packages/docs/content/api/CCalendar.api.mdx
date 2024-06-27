@@ -1,0 +1,40 @@
+
+```jsx
+import { CCalendar } from '@coreui/react'
+// or
+import CCalendar from '@coreui/react/src/components/calendar/CCalendar'
+```
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| **calendarDate** | Default date of the component | `string` \| `Date` | startDate || endDate || null |
+| **calendars** | The number of calendars that render on desktop devices. | `number` | 1 |
+| **className** | A string of all className you want applied to the component. | `string` | - |
+| **dayFormat** **_4.3.0+_** | Set the format of day name. | `'numeric'` \| `'2-digit'` \| `((date: Date) => string` \| `number)` | numeric |
+| **disabledDates** | Specify the list of dates that cannot be selected. | `Date[]` \| `Date[][]` \| `(Date` \| `Date[])[]` | - |
+| **endDate** | Initial selected to date (range). | `string` \| `Date` | - |
+| **firstDayOfWeek** | Sets the day of start week.<br/>- 0 - Sunday,<br/>- 1 - Monday,<br/>- 2 - Tuesday,<br/>- 3 - Wednesday,<br/>- 4 - Thursday,<br/>- 5 - Friday,<br/>- 6 - Saturday, | `number` | 1 |
+| **locale** | Sets the default locale for components. If not set, it is inherited from the browser. | `string` | default |
+| **maxDate** | Max selectable date. | `string` \| `Date` | - |
+| **minDate** | Min selectable date. | `string` \| `Date` | - |
+| **navNextDoubleIcon** | The custom next double icon. | `ReactNode` | - |
+| **navNextIcon** | The custom next icon. | `ReactNode` | - |
+| **navPrevDoubleIcon** | The custom prev double icon. | `ReactNode` | - |
+| **navPrevIcon** | The custom prev icon. | `ReactNode` | - |
+| **navYearFirst** **_4.3.0+_** | Reorder year-month navigation, and render year first. | `boolean` | - |
+| **navigation** | Show arrows navigation. | `boolean` | true |
+| **onCalendarDateChange** | Callback fired when the calendar date changed. | `(date: string` \| `Date) => void` | - |
+| **onDateHover** | Callback fired when the user hovers over the calendar cell. | `(date: string` \| `Date) => void` | - |
+| **onEndDateChange** | Callback fired when the end date changed. | `(date: string` \| `Date, formatedDate?: string) => void` | - |
+| **onSelectEndChange** | Callback fired when the selection type changed. | `(value: boolean) => void` | - |
+| **onStartDateChange** | Callback fired when the start date changed. | `(date: string` \| `Date, formatedDate?: string) => void` | - |
+| **onViewChanged** | Callback fired when the view type of calendar changed. | `(view: string) => void` | - |
+| **range** | Allow range selection. | `boolean` | - |
+| **selectAdjacementDays** **_4.11.0+_** | Set whether days in adjacent months shown before or after the current month are selectable. This only applies if the `showAdjacementDays` option is set to true. | `boolean` | false |
+| **selectEndDate** | Toggle select mode between start and end date. | `boolean` | - |
+| **selectionType** **_5.0.0+_** | Specify the type of date selection as day, week, month, or year. | `'day'` \| `'week'` \| `'month'` \| `'year'` | day |
+| **showAdjacementDays** **_4.11.0+_** | Set whether to display dates in adjacent months (non-selectable) at the start and end of the current month. | `boolean` | true |
+| **showWeekNumber** **_5.0.0+_** | Set whether to display week numbers in the calendar. | `boolean` | false |
+| **startDate** | Initial selected date. | `string` \| `Date` | - |
+| **weekNumbersLabel** **_5.0.0+_** | Label displayed over week numbers in the calendar. | `string` | - |
+| **weekdayFormat** | Set length or format of day name. | `number` \| `'long'` \| `'narrow'` \| `'short'` \| `((date: Date) => string` \| `number)` | 2 |

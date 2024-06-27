@@ -1,0 +1,19 @@
+// fusv-disable
+$enable-ltr: false;
+$enable-rtl: true;
+// fusv-enable
+
+@import "@coreui/coreui-pro/scss/functions";
+@import "@coreui/coreui-pro/scss/variables";
+@import "@coreui/coreui-pro/scss/variables-dark";
+@import "@coreui/coreui-pro/scss/maps";
+@import "@coreui/coreui-pro/scss/mixins";
+@import "@coreui/coreui-pro/scss/utilities";
+
+// stylelint-disable selector-no-qualifying-type
+div[dir="rtl"] {
+  @import "@coreui/coreui-pro/scss/calendar";
+  @import "@coreui/coreui-pro/scss/date-picker";
+  @import "@coreui/coreui-pro/scss/time-picker";
+}
+// stylelint-enable selector-no-qualifying-type

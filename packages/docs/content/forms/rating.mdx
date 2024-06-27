@@ -1,0 +1,314 @@
+---
+title: React Rating Component
+name: Rating
+description: A React star rating component allows users to rate and provide feedback on content or products by selecting a specified number of stars, typically ranging from one to five, representing their level of satisfaction or preference.
+menu: Forms
+route: /forms/rating
+pro_component: true
+other_frameworks: rating
+---
+
+import { useEffect, useState } from 'react'
+import { CBadge, CButton, CRating, CTooltip } from '@coreui/react-pro/src/index'
+import CIcon from '@coreui/icons-react'
+import { cilHeart, cilMeh, cilMoodBad, cilMoodGood, cilMoodVeryBad, cilStar, cilMoodVeryGood } from '@coreui/icons'
+import { cisStar }  from '@coreui/icons-pro'
+
+## How to use React Rating Component.
+
+Embed the Rating component in your React application like this:
+
+```jsx preview
+<CRating value={3} />
+```
+
+## Allow clear
+
+Enable users to clear their selected rating by clicking on the current rating again. This functionality is activated by setting `allowClear` boolean property.
+
+```jsx preview
+<CRating allowClear value={3} />
+```
+
+This allows the selected rating to be deselected, effectively resetting the rating to a state where no value is selected.
+
+## Resettable
+
+Our React Rating component allows users to assign and reset a star rating within a user interface. In the example below, we use the `CButton` component to clear the selected value by passing `null`.
+
+export const ResettableExample = () => {
+  const [currentValue, seCurrentValue] = useState(3)
+
+  return (
+    <div className="d-flex align-items-center">
+      <CRating onChange={(value) => seCurrentValue(value)} value={currentValue} />
+      <CButton className="ms-3" color="primary" onClick={() => seCurrentValue(null)}>reset</CButton>
+    </div>
+  )
+}
+
+<Example>
+  <ResettableExample />
+</Example>
+
+```jsx
+const [currentValue, seCurrentValue] = useState(3)
+
+return (
+  <div className="d-flex align-items-center">
+    <CRating onChange={(value) => seCurrentValue(value)} value={currentValue} />
+    <CButton className="ms-3" color="primary" onClick={() => seCurrentValue(null)}>reset</CButton>
+  </div>
+)
+```
+
+## Read only
+
+Set the React rating component to read-only by adding `readOnly` property. This disables interaction, preventing users from changing the displayed rating value.
+
+```jsx preview
+<CRating readOnly value={3} />
+```
+
+## Disabled
+
+Add the `disabled` boolean property to give it a grayed out appearance, remove pointer events, and prevent focusing.
+
+```jsx preview
+<CRating disabled value={3}  />
+```
+
+## Tooltips
+
+Enable descriptive text on hover by adding `tooltips` prop. This provides immediate feedback or guidance as the user interacts with the rating items.
+
+```jsx preview
+<CRating tooltips value={3} />
+```
+
+For custom messages, provide an array of labels corresponding to each rating value to enhance the user's understanding of each rating level.
+
+```jsx preview
+<CRating tooltips={['Very bad', 'Bad', 'Meh', 'Good', 'Very good']} value={3} />
+```
+
+## Sizes
+
+Larger or smaller react rating component? Add `size="lg"` or `size="sm"` for additional sizes.
+
+```jsx preview
+<CRating size="sm" value={3} />
+<CRating value={3} />
+<CRating  size="lg" value={3} />
+```
+
+## Precision
+
+Adjust the granularity of the Rating component by setting `precision` prop. This attribute allows for fractional ratings, such as quarter values, to provide more precise feedback.
+
+```jsx preview
+<CRating precision={0.25} value={3} />
+```
+
+## Number of items
+
+Control the total number of rating items displayed by using `itemCount` property. You can create a React rating component with a custom scale, be it larger for detailed assessments or smaller for simplicity.
+
+```jsx preview
+<CRating itemCount={20} value={5} />
+```
+
+```jsx preview
+<CRating itemCount={3} value={1} />
+```
+
+## Custom icons
+
+Customize the React rating component with your choice of SVG icons by assigning new values to the `activeIcon` and `icon` properties in the JavaScript options. This allows for a unique look tailored to the design language of your site or application.
+
+The Rating component can be customized with either SVG or font icons, allowing for visual alignment with your application's design. You can specify different icons for each rating value to enhance user interaction.
+
+In the example below, we demonstrate how to set custom icons using SVG, allowing for detailed customization of the visual elements within the Rating component.
+
+<Example>
+  <CRating
+    activeIcon={<CIcon icon={cisStar} customClassName=" " />}
+    icon={<CIcon icon={cilStar} customClassName=" " />}
+    value={3}
+  />
+</Example>
+```jsx
+<CRating
+  activeIcon={<CIcon icon={cisStar} customClassName=" " />}
+  icon={<CIcon icon={cilStar} customClassName=" " />}
+  value={3}
+/>
+```
+
+In the example below, we use font icons from the CoreUI Icons set. In the `activeIcon` configuration, we also apply the utility class `text-danger` to change the icon's color to red when it is active.
+
+<Example>
+  <CRating
+    activeIcon={<CIcon icon={cilHeart} customClassName="text-danger" />}
+    icon={<CIcon icon={cilHeart} customClassName=" " />}
+    value={3}
+  />
+</Example>
+```jsx
+<CRating
+  activeIcon={<CIcon icon={cilHeart} customClassName="text-danger" />}
+  icon={<CIcon icon={cilHeart} customClassName=" " />}
+  value={3}
+/>
+```
+
+For a more dynamic experience, define different icons for each rating value, enhancing the visual feedback:
+
+export const CustomIconsExample1 = () => {
+  const icons = {
+    1: <CIcon icon={cilMoodVeryBad} customClassName=" " />,
+    2: <CIcon icon={cilMoodBad} customClassName=" " />,
+    3: <CIcon icon={cilMeh} customClassName=" " />,
+    4: <CIcon icon={cilMoodGood} customClassName=" " />,
+    5: <CIcon icon={cilMoodVeryGood} customClassName=" " />,
+  }
+
+  const activeIcons = {
+    1: <CIcon icon={cilMoodVeryBad} customClassName="text-danger-emphasis" />,
+    2: <CIcon icon={cilMoodBad} customClassName="text-danger" />,
+    3: <CIcon icon={cilMeh} customClassName="text-warning" />,
+    4: <CIcon icon={cilMoodGood} customClassName="text-success" />,
+    5: <CIcon icon={cilMoodVeryGood} customClassName="text-success-emphasis" />,
+  }
+
+  return (
+    <CRating
+      activeIcon={activeIcons}
+      highlightOnlySelected
+      icon={icons}
+      tooltips={['Very bad', 'Bad', 'Meh', 'Good', 'Very good']}
+      value={3}
+    />
+  )
+}
+
+<Example>
+  <CustomIconsExample1 />
+</Example>
+
+```jsx
+const icons = {
+  1: <CIcon icon={cilMoodVeryBad} customClassName=" " />,
+  2: <CIcon icon={cilMoodBad} customClassName=" " />,
+  3: <CIcon icon={cilMeh} customClassName=" " />,
+  4: <CIcon icon={cilMoodGood} customClassName=" " />,
+  5: <CIcon icon={cilMoodVeryGood} customClassName=" " />,
+}
+
+const activeIcons = {
+  1: <CIcon icon={cilMoodVeryBad} customClassName="text-danger-emphasis" />,
+  2: <CIcon icon={cilMoodBad} customClassName="text-danger" />,
+  3: <CIcon icon={cilMeh} customClassName="text-warning" />,
+  4: <CIcon icon={cilMoodGood} customClassName="text-success" />,
+  5: <CIcon icon={cilMoodVeryGood} customClassName="text-success-emphasis" />,
+}
+
+return (
+  <CRating
+    activeIcon={activeIcons}
+    highlightOnlySelected
+    icon={icons}
+    tooltips={['Very bad', 'Bad', 'Meh', 'Good', 'Very good']}
+    value={3}
+  />
+)
+```
+
+## Custom feedback
+
+The React Rating component integrates interactive star ratings with dynamic textual feedback using other components from CoreUI. It enables users to select a rating that updates the display and label in real-time, enhancing the interactive experience. Hover effects provide immediate feedback on potential ratings before selection, ensuring an intuitive user interface.
+
+export const CustomFeedbackExample = () => {
+  const labels = {
+    1: 'Very bad',
+    2: 'Bad',
+    3: 'Meh',
+    4: 'Good',
+    5: 'Very good'
+  }
+
+  const [label, setLabel] = useState(labels[3])
+  const [currentValue, seCurrentValue] = useState(3)
+
+  return (
+    <div className="d-flex align-items-center">
+      <div className="text-body-secondary me-3">{currentValue} / 5</div>
+      <CRating
+        className="d-inline-flex"
+        onChange={(value) => seCurrentValue(value)}
+        onHover={(value) => setLabel(value ? labels[value] : labels[currentValue])}
+        value={currentValue}
+      />
+      {label && <CBadge className="ms-3" color="dark">{label}</CBadge>}
+    </div>
+  )
+}
+
+<Example>
+  <CustomFeedbackExample />
+</Example>
+
+```jsx
+const labels = {
+  1: 'Very bad',
+  2: 'Bad',
+  3: 'Meh',
+  4: 'Good',
+  5: 'Very good'
+}
+
+const [label, setLabel] = useState(labels[3])
+const [currentValue, seCurrentValue] = useState(3)
+
+return (
+  <div className="d-flex align-items-center">
+    <div className="text-body-secondary me-3">{currentValue} / 5</div>
+    <CRating
+      className="d-inline-flex"
+      onChange={(value) => seCurrentValue(value)}
+      onHover={(value) => setLabel(value ? labels[value] : labels[currentValue])}
+      value={currentValue}
+    />
+    {label && <CBadge className="ms-3" color="dark">{label}</CBadge>}
+  </div>
+)
+```
+
+
+## Customizing
+
+### CSS variables
+
+React ratings use local CSS variables on `.rating` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+
+<ScssDocs file="_rating.scss" capture="rating-css-vars"/>
+
+#### How to use CSS variables
+
+```jsx
+const vars = {
+  '--my-css-var': 10,
+  '--my-another-css-var': 'red',
+}
+return <CRating style={vars}>...</CRating>
+```
+
+### SASS variables
+
+<ScssDocs file="_variables.scss" capture="rating-variables"/>
+
+## API
+
+### CRating
+
+`markdown:CRating.api.mdx`

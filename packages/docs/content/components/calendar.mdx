@@ -1,0 +1,175 @@
+---
+title: React Calendar Component
+name: Calendar
+description: Create consistent cross-browser and cross-device calendar
+menu: Forms
+route: /components/calendar
+pro_component: true
+---
+
+import { CCalendar } from '@coreui/react-pro/src/components/calendar/'
+
+## Example
+
+### Days
+
+```jsx preview
+<div className="d-flex mb-3">
+  <CCalendar
+    className="border rounded"
+    showWeekNumber
+    startDate="2023-08-20"
+    calendars={1}
+    onStartDateChange={(date) => console.log(date)}
+    onEndDateChange={(date) => console.log(date)}
+    onDateHover={(date) => console.log(date)}
+  />
+</div>
+<div className="d-flex mb-3">
+  <CCalendar
+    className="border rounded"
+    showWeekNumber
+    startDate="2023-08-20"
+    endDate="2023-10-6"
+    calendars={1}
+    range
+    onStartDateChange={(date) => console.log(date)}
+    onEndDateChange={(date) => console.log(date)}
+    onDateHover={(date) => console.log(date)}
+  />
+</div>
+<div className="d-flex">
+  <CCalendar
+    className="border rounded"
+    showWeekNumber
+    startDate="2023-08-20"
+    endDate="2023-10-6"
+    calendars={2}
+    range
+    onStartDateChange={(date) => console.log(date)}
+    onEndDateChange={(date) => console.log(date)}
+    onDateHover={(date) => console.log(date)}
+  />
+</div>
+```
+
+## Disabled dates
+
+export const DisabledDatesExample = () => {
+  const calendarDate = new Date(2022, 2, 1)
+  const disabledDates = [
+    [new Date(2022, 2, 4), new Date(2022, 2, 7)],
+    new Date(2022, 2, 16),
+    new Date(2022, 3, 16),
+    [new Date(2022, 4, 2), new Date(2022, 4, 8)],
+    [new Date(2022, 5, 1), new Date(2022, 6, 31)],
+  ]
+  const maxDate = new Date(2022, 12, 0)
+  const minDate = new Date(2022, 1, 1)
+  return (
+    <div className="row">
+      <div className="col-lg-5 d-flex">
+        <CCalendar
+          calendarDate={calendarDate}
+          calendars={2}
+          className="border rounded"
+          disabledDates={disabledDates}
+          locale="en-US"
+          maxDate={maxDate}
+          minDate={minDate}
+          range
+        />
+      </div>
+    </div>
+  )
+}
+
+<Example>
+  <DisabledDatesExample />
+</Example>
+
+### Weeks
+
+```jsx preview
+<div className="d-flex">
+  <CCalendar
+    className="border rounded"
+    showWeekNumber
+    selectionType="week"
+    minDate="2025W02"
+    maxDate="2026W06"
+    startDate="2025W07"
+    endDate="2025W12"
+    calendars={2}
+    range
+  />
+</div>  
+```
+
+### Months
+
+```jsx preview
+<div className="d-flex">
+  <CCalendar
+    className="border rounded"
+    selectionType="month"
+    minDate="2023-06"
+    maxDate="2025-06"
+    startDate="2023-08"
+    endDate="2024-05"
+    calendars={2}
+    range
+    onStartDateChange={(date) => console.log(date)}
+    onEndDateChange={(date) => console.log(date)}
+    onDateHover={(date) => console.log(date)}
+  />
+</div>
+```
+
+### Years
+
+```jsx preview
+<div className="d-flex">
+  <CCalendar
+    className="border rounded"
+    selectionType="year"
+    minDate="2021"
+    maxDate="2048"
+    startDate="2023"
+    endDate="2036"
+    calendars={2}
+    range
+    onStartDateChange={(date) => console.log(date)}
+    onEndDateChange={(date) => console.log(date)}
+    onDateHover={(date) => console.log(date)}
+  />
+</div>
+```
+
+## Customizing
+
+### CSS variables
+
+React date pickers use local CSS variables on `.date-picker` and `.calendar` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+
+<ScssDocs file="_calendar.scss" capture="calendar-css-vars" />
+
+#### How to use CSS variables
+
+```jsx
+const vars = {
+  '--my-css-var': 10,
+  '--my-another-css-var': 'red',
+}
+return <CCalendar style={vars} />
+```
+
+### SASS variables
+
+<ScssDocs file="_variables.scss" capture="calendar-variables" />
+
+## API
+
+### CCalendar
+
+`markdown:CCalendar.api.mdx`

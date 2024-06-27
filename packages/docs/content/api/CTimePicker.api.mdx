@@ -1,0 +1,51 @@
+
+```jsx
+import { CTimePicker } from '@coreui/react-pro'
+// or
+import CTimePicker from '@coreui/react-pro/src/components/time-picker/CTimePicker'
+```
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| **ampm** **_4.8.0+_** | Set if the component should use the 12/24 hour format. If `true` forces the interface to a 12-hour format. If `false` forces the interface into a 24-hour format. If `auto` the current locale will determine the 12 or 24-hour interface by default locales. | `boolean` \| `'auto'` | auto |
+| **cancelButton** | Toggle visibility or set the content of cancel button. | `ReactNode` | Cancel |
+| **cancelButtonColor** | Sets the color context of the cancel button to one of CoreUI’s themed colors. | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'dark'` \| `'light'` \| `string` | primary |
+| **cancelButtonSize** | Size the cancel button small or large. | `'sm'` \| `'lg'` | sm |
+| **cancelButtonVariant** | Set the cancel button variant to an outlined button or a ghost button. | `'outline'` \| `'ghost'` | ghost |
+| **className** | A string of all className you want applied to the component. | `string` | - |
+| **cleaner** | Toggle visibility or set the content of the cleaner button. | `ReactNode` | true |
+| **confirmButton** | Toggle visibility or set the content of confirm button. | `ReactNode` | OK |
+| **confirmButtonColor** | Sets the color context of the confirm button to one of CoreUI’s themed colors. | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'dark'` \| `'light'` \| `string` | primary |
+| **confirmButtonSize** | Size the confirm button small or large. | `'sm'` \| `'lg'` | sm |
+| **confirmButtonVariant** | Set the confirm button variant to an outlined button or a ghost button. | `'outline'` \| `'ghost'` | - |
+| **container** | Set container type for the component. | `'dropdown'` \| `'inline'` | dropdown |
+| **disabled** | Toggle the disabled state for the component. | `boolean` | - |
+| **dropdownClassNames** | A string of all className you want applied to the dropdown menu. | `string` | - |
+| **feedback** **_4.2.0+_** | Provide valuable, actionable feedback. | `ReactNode` | - |
+| **feedbackInvalid** **_4.2.0+_** | Provide valuable, actionable feedback. | `ReactNode` | - |
+| **feedbackValid** **_4.2.0+_** | Provide valuable, actionable invalid feedback when using standard HTML form validation which applied two CSS pseudo-classes, `:invalid` and `:valid`. | `ReactNode` | - |
+| **floatingClassName** **_4.5.0+_** | A string of all className you want applied to the floating label wrapper. | `string` | - |
+| **footer** | Toggle visibility of footer element. | `boolean` | true |
+| **footerContent** | Add custom elements to the footer. | `ReactNode` | - |
+| **hours** **_5.0.0+_** | Specify a list of available hours using an array, or customize the filtering of hours through a function. | `number[]` \| `((hour: number) => number[])` | - |
+| **indicator** | Toggle visibility or set the content of the input indicator. | `ReactNode` | true |
+| **inputOnChangeDelay** **_5.0.0+_** | Defines the delay (in milliseconds) for the input field's onChange event. | `number` | 750 |
+| **inputReadOnly** | Toggle the readonly state for the component. | `boolean` | - |
+| **invalid** | Set component validation state to invalid. | `boolean` | - |
+| **label** **_4.2.0+_** | Add a caption for a component. | `ReactNode` | - |
+| **locale** | Sets the default locale for components. If not set, it is inherited from the browser. | `string` | default |
+| **minutes** **_5.0.0+_** | Toggle the display of minutes, specify a list of available minutes using an array, or customize the filtering of minutes through a function. | `boolean` \| `number[]` \| `((minute: number) => number[])` | true |
+| **onHide** | Callback fired when the component requests to be hidden. | `() => void` | - |
+| **onShow** | Callback fired when the component requests to be shown. | `() => void` | - |
+| **onTimeChange** | Callback fired when the time changed. | `(timeString: string, localeTimeString?: string, date?: Date) => void` | - |
+| **placeholder** | Specifies a short hint that is visible in the input. | `string` | Select time |
+| **required** **_4.10.0+_** | When present, it specifies that time must be filled out before submitting the form. | `boolean` | - |
+| **seconds** **_4.8.0+_** | Toggle the display of seconds, specify a list of available seconds using an array, or customize the filtering of seconds through a function. | `boolean` \| `number[]` \| `((second: number) => number[])` | true |
+| **size** | Size the component small or large. | `'sm'` \| `'lg'` | - |
+| **text** **_4.2.0+_** | Add helper text to the component. | `ReactNode` | - |
+| **time** | Initial selected time. | `string` \| `Date` | - |
+| **toggler** | The content of toggler. | `ReactNode` | - |
+| **tooltipFeedback** **_4.2.0+_** | Display validation feedback in a styled tooltip. | `boolean` | - |
+| **valid** | Set component validation state to valid. | `boolean` | - |
+| **variant** | Set the time picker variant to a roll or select. | `'roll'` \| `'select'` | roll |
+| **visible** | Toggle the visibility of dropdown menu component. | `boolean` | - |

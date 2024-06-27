@@ -1,0 +1,559 @@
+---
+title: React Date Range Picker Component
+name: Date Range Picker
+description: The React Date Range Picker component by CoreUI is a versatile tool for selecting date ranges. It is designed for compatibility across various browsers and devices, making it a reliable choice for diverse applications.
+menu: Forms
+route: /forms/date-range-picker
+other_frameworks: date-range-picker
+pro_component: true
+---
+
+import { CDateRangePicker } from '@coreui/react-pro/src/index'
+import { format, parse } from 'date-fns'
+import { es } from 'date-fns/locale'
+
+## Example
+
+Explore basic usage of the Date Range Picker through sample code snippets that demonstrate its core functionality.
+
+### Days
+
+Select date ranges by day with examples including basic usage, as well as variants featuring time pickers and footers for enhanced functionality.
+
+```jsx preview
+<div className="row">
+  <div className="col-sm-6 mb-3 mb-sm-0">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+  <div className="col-sm-6">
+    <CDateRangePicker
+      endDate="2022/08/17"
+      label="Date range"
+      locale="en-US"
+      startDate="2022/08/03"
+    />
+  </div>
+</div>
+```
+
+#### With timepicker
+
+Our React DateRangePicker component not only supports date selection but also includes a time picker feature for selecting a specific time of day. Enable the React TimePicker by passing a `timepicker` prop to the `<CDatePicker/>` component.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-7 mb-3">
+      <CDateRangePicker locale="en-US" timepicker />
+    </div>
+    <div className="col-lg-7">
+      <CDateRangePicker
+        startDate="2022/08/03 02:34:17 AM"
+        endDate="2022/09/17 11:29:41 PM"
+        locale="en-US"
+        timepicker
+      />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="en-US" timepicker />
+<CDateRangePicker
+  startDate="2022/08/03 02:34:17 AM"
+  endDate="2022/09/17 11:29:41 PM"
+  locale="en-US"
+  timepicker
+/>
+```
+
+#### With footer
+
+Here's an example with an additional footer. The footer is useful for displaying extra information or actions related to the selected date, such as "Today" or "Clear" buttons. The footer component is fully customizable and can be styled to match the rest of the application.
+
+<Example>
+  <div className="row">
+    <div className="col-sm-6 mb-3 mb-sm-0">
+      <CDateRangePicker footer locale="en-US" />
+    </div>
+    <div className="col-sm-6">
+      <CDateRangePicker startDate="2022/08/03" endDate="2022/08/17" footer locale="en-US" />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker footer locale="en-US" />
+<CDateRangePicker startDate="2022/08/03" endDate="2022/08/17" footer locale="en-US" />
+```
+
+### Weeks
+
+To enable week selection, set the `selectionType` property to `week` and pass the `showWeekNumber` prop to display week numbers.
+
+```jsx preview
+<div className="row">
+  <div className="col-sm-6 mb-3 mb-sm-0">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      selectionType="week"
+      showWeekNumber
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+  <div className="col-sm-6">
+    <CDateRangePicker
+      startDate="2025W07"
+      endDate="2025W12"
+      label="Date range"
+      locale="en-US"
+      selectionType="week"
+      showWeekNumber
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+</div>
+```
+
+### Months
+
+Set the `selectionType` property to `month` to enable months range selection.
+
+```jsx preview
+<div className="row">
+  <div className="col-sm-6 mb-3 mb-sm-0">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      selectionType="month"
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+  <div className="col-sm-6">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      selectionType="month"
+      startDate="2022-8"
+      endDate="2023-5"
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+</div>
+```
+
+### Years
+
+Set the `selectionType` property to `year` to enable years range selection.
+
+```jsx preview
+<div className="row">
+  <div className="col-sm-6 mb-3 mb-sm-0">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      selectionType="year"
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+  <div className="col-sm-6">
+    <CDateRangePicker
+      label="Date range"
+      locale="en-US"
+      selectionType="year"
+      startDate="2022"
+      endDate="2028"
+      onStartDateChange={(date) => console.log(date)}
+      onEndDateChange={(date) => console.log(date)}
+    />
+  </div>
+</div>
+```
+
+## Sizing
+
+Set heights using `size` property like `size="lg"` and `size="sm"`.
+
+<Example>
+  <div className="row mb-4">
+    <div className="col-lg-6">
+      <CDateRangePicker locale="en-US" size="lg" />
+    </div>
+  </div>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker locale="en-US" size="sm" />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="en-US" size="lg" />
+<CDateRangePicker locale="en-US" size="sm" />
+```
+
+## Disabled
+
+Add the `disabled` boolean attribute on an input to give it a grayed out appearance and remove pointer events.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker disabled locale="en-US" />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker disabled locale="en-US" />
+```
+
+## Readonly
+
+Add the `inputReadOnly` boolean attribute to prevent modification of the input's value.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker inputReadOnly locale="en-US" />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker inputReadOnly locale="en-US" />
+```
+
+## Disabled dates
+
+Our React Date Range Picker component features the ability to disable specific dates, such as weekends or holidays, by using the `disabledDate` prop. This prop takes an array and uses custom logic to determine which dates should be disabled.
+
+export const DisabledDatesExample = () => {
+  const calendarDate = new Date(2022, 2, 1)
+  const disabledDates = [
+    [new Date(2022, 2, 4), new Date(2022, 2, 7)],
+    new Date(2022, 2, 16),
+    new Date(2022, 3, 16),
+    [new Date(2022, 4, 2), new Date(2022, 4, 8)],
+  ]
+  const maxDate = new Date(2022, 5, 0)
+  const minDate = new Date(2022, 1, 1)
+  return (
+    <div className="row">
+      <div className="col-lg-5">
+        <CDateRangePicker
+          calendarDate={calendarDate}
+          disabledDates={disabledDates}
+          locale="en-US"
+          maxDate={maxDate}
+          minDate={minDate}
+        />
+      </div>
+    </div>
+  )
+}
+
+<Example>
+  <DisabledDatesExample />
+</Example>
+
+```jsx
+const calendarDate = new Date(2022, 2, 1)
+const disabledDates = [
+  [new Date(2022, 2, 4), new Date(2022, 2, 7)], // range of dates that cannot be selected
+  new Date(2022, 2, 16), // single date that cannot be selected
+  new Date(2022, 3, 16), // single date that cannot be selected
+  [new Date(2022, 4, 2), new Date(2022, 4, 8)], // range of dates that cannot be selected
+]
+const maxDate = new Date(2022, 5, 0)
+const minDate = new Date(2022, 1, 1)
+return (
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker
+        calendarDate={calendarDate}
+        disabledDates={disabledDates}
+        locale="en-US"
+        maxDate={maxDate}
+        minDate={minDate}
+      />
+    </div>
+  </div>
+)
+```
+
+## Custom ranges
+
+In order to configure custom date ranges in the Date Range component, you must use the `ranges` prop to define a set of predefined ranges. These ranges can include predefined options such as "Today", "Yesterday", "Last 7 Days", etc.
+
+export const CustomRangesExample = () => {
+  const customRanges = {
+    Today: [new Date(), new Date()],
+    Yesterday: [
+      new Date(new Date().setDate(new Date().getDate() - 1)),
+      new Date(new Date().setDate(new Date().getDate() - 1)),
+    ],
+    'Last 7 Days': [new Date(new Date().setDate(new Date().getDate() - 6)), new Date(new Date())],
+    'Last 30 Days': [new Date(new Date().setDate(new Date().getDate() - 29)), new Date(new Date())],
+    'This Month': [
+      new Date(new Date().setDate(1)),
+      new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0),
+    ],
+    'Last Month': [
+      new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
+      new Date(new Date().getFullYear(), new Date().getMonth(), 0),
+    ],
+  }
+  return (
+    <div className="row">
+      <div className="col-lg-5">
+        <CDateRangePicker ranges={customRanges} />
+      </div>
+    </div>
+  )
+}
+
+<Example>
+  <CustomRangesExample />
+</Example>
+
+```jsx
+const customRanges = {
+  Today: [new Date(), new Date()],
+  Yesterday: [
+    new Date(new Date().setDate(new Date().getDate() - 1)),
+    new Date(new Date().setDate(new Date().getDate() - 1)),
+  ],
+  'Last 7 Days': [new Date(new Date().setDate(new Date().getDate() - 6)), new Date(new Date())],
+  'Last 30 Days': [new Date(new Date().setDate(new Date().getDate() - 29)), new Date(new Date())],
+  'This Month': [
+    new Date(new Date().setDate(1)),
+    new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0),
+  ],
+  'Last Month': [
+    new Date(new Date().getFullYear(), new Date().getMonth() - 1, 1),
+    new Date(new Date().getFullYear(), new Date().getMonth(), 0),
+  ],
+}
+return (
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker ranges={customRanges} />
+    </div>
+  </div>
+)
+```
+
+## Non-english locale
+
+CoreUI's React Date Range Picker enables the display of dates and times in non-English locales, making it essential for international users and multilingual support.
+
+### Auto
+
+By default, the DateRangePicker component uses the default browser locale, but it can be easily configured to use a different locale supported by the JavaScript Internationalization API. To set the locale, you can pass the desired language code as a prop to the DateRangePicker component. This feature enables the creation of more inclusive and accessible applications that cater to a diverse audience.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker />
+```
+
+### Chinese
+
+Here is an example of a simple React Date Range Picker with Chinese localization.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker locale="zh-CN" placeholder={['入住日期', '退房日期']} />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="zh-CN" placeholder={['入住日期', '退房日期']} />
+```
+
+### Japanese
+
+Below is an example of a basic React Date Range Picker with Japanese locales.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker locale="ja" placeholder={['日付を選択', '終了日']} />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="ja" placeholder={['日付を選択', '終了日']} />
+```
+
+### Korean
+
+Here's a simple example of a Date Range Picker with Korean locales.
+
+<Example>
+  <div className="row">
+    <div className="col-lg-5">
+      <CDateRangePicker locale="ko" placeholder={['날짜 선택', '종료일']} />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="ko" placeholder={['날짜 선택', '종료일']} />
+```
+
+## Right to left support
+
+RTL support is built-in and can be explicitly controlled through the `$enable-rtl` variables in scss.
+
+### Hebrew
+
+<Example>
+  <div className="row" dir="rtl">
+    <div className="col-lg-5">
+      <CDateRangePicker placeholder={['בחר תאריך', 'תאריך סיום']} locale="he-IL" />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker placeholder={['בחר תאריך', 'תאריך סיום']} locale="he-IL" />
+```
+
+### Persian
+
+<Example>
+  <div className="row" dir="rtl">
+    <div className="col-lg-5">
+      <CDateRangePicker locale="fa-IR" placeholder={['تاریخ شروع', 'تاریخ پایان']} />
+    </div>
+  </div>
+</Example>
+
+```jsx
+<CDateRangePicker locale="fa-IR" placeholder={['تاریخ شروع', 'تاریخ پایان']} />
+```
+
+## Custom formats
+
+<Callout color="info">
+  Heads up! As of v5.0.0, the `format` property is removed in `<CDateRangePicker>`. Instead, utilize the `inputDateFormat` to format dates into custom strings and `inputDateParse` to parse custom strings into Date objects.
+</Callout>
+
+The provided code demonstrates how to use the `inputDateFormat` and `inputDateParse` properties. In this example, the `format` and `parse` functions from `date-fns` are employed to tailor the date presentation and interpretation. 
+
+```jsx
+import { format, parse } from 'date-fns'
+import { es } from 'date-fns/locale'
+```
+The `inputDateFormat` property formats the date into a custom string, while the `inputDateParse` property parses a custom string into a Date object. The code showcases the date range in different formats based on locale, such as 'MMMM dd, yyyy' and 'yyyy MMMM dd', and accommodates different locales, like 'en-US' and 'es-ES'.
+
+```jsx preview
+<div className="row">
+  <div className="col-lg-6">
+    <CDateRangePicker
+      startDate="2022/08/03"
+      endDate="2022/08/17"
+      label="Date range"
+      locale="en-US"
+      inputDateParse={(date) => parse(date, 'MMMM dd, yyyy', new Date())}
+      inputDateFormat={(date) => format(new Date(date), 'MMMM dd, yyyy')}
+    />
+  </div>
+  <div className="col-lg-6">
+    <CDateRangePicker
+      startDate="2022/08/03"
+      endDate="2022/08/17"
+      label="Rango de fechas"
+      locale="es-ES"
+      placeholder={['Fecha de inicio', 'Fecha de fin']}
+      inputDateParse={(date) => parse(date, 'yyyy MMMM dd', new Date(), { locale: es })}
+      inputDateFormat={(date) => format(new Date(date), 'yyyy MMMM dd', { locale: es })}
+    />
+  </div>
+</div>
+```
+
+#### With timepicker
+
+This example demonstrates how to integrate a timepicker into a date range picker using the `timepicker` property.
+
+```jsx preview
+<div className="row">
+  <div className="col-lg-8 mb-3">
+    <CDateRangePicker
+      startDate="2022/08/03 02:34:17 AM"
+      endDate="2022/09/17 11:29:41 PM"
+      label="Date range"
+      locale="en-US"
+      timepicker
+      inputDateParse={(date) => parse(date, 'MMM dd, yyyy h:mm:ss a', new Date())}
+      inputDateFormat={(date) => format(new Date(date), 'MMM dd, yyyy h:mm:ss a')}
+    />
+  </div>
+  <div className="col-lg-8">
+    <CDateRangePicker
+      startDate="2022/08/03 02:34:17 AM"
+      endDate="2022/09/17 11:29:41 PM"
+      label="Rango de fechas"
+      locale="es-ES"
+      placeholder={['Fecha de inicio', 'Fecha de fin']}
+      timepicker
+      inputDateParse={(date) => parse(date, 'yyyy MMM dd h:mm:ss a', new Date(), { locale: es })}
+      inputDateFormat={(date) => format(new Date(date), 'yyyy MMM dd h:mm:ss a', { locale: es })}
+    />
+  </div>
+</div>
+```
+
+## Customizing
+
+### CSS variables
+
+React date range pickers use local CSS variables on `.date-picker` and `.calendar` for enhanced real-time customization. Values for the CSS variables are set via Sass, so Sass customization is still supported, too.
+
+<ScssDocs file="_date-picker.scss" capture="date-picker-css-vars" />
+
+<ScssDocs file="_calendar.scss" capture="calendar-css-vars" />
+
+#### How to use CSS variables
+
+```jsx
+const vars = {
+  '--my-css-var': 10,
+  '--my-another-css-var': 'red',
+}
+return <CDateRangePicker style={vars}>...</CDateRangePicker>
+```
+
+### SASS variables
+
+<ScssDocs file="_variables.scss" capture="date-picker-variables" />
+
+<ScssDocs file="_variables.scss" capture="calendar-variables" />
+
+## API
+
+### CDateRangePicker
+
+`markdown:CDateRangePicker.api.mdx`

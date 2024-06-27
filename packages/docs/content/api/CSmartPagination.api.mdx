@@ -1,0 +1,23 @@
+
+```jsx
+import { CSmartPagination } from '@coreui/react-pro'
+// or
+import CSmartPagination from '@coreui/react-pro/src/components/smart-pagination/CSmartPagination'
+```
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| **activePage** | Current page number. | `number` | 1 |
+| **align** | Horizontall align. | `'start'` \| `'center'` \| `'end'` | start |
+| **arrows** | Show/hide arrows. | `boolean` | true |
+| **className** | A string of all className you want applied to the base component. | `string` | - |
+| **dots** | Show/hide dots. | `boolean` | true |
+| **doubleArrows** | Show double arrows buttons. | `boolean` | true |
+| **firstButton** | The content of 'firstButton' button. | `ReactNode` | <React.Fragment>&laquo;</React.Fragment> |
+| **lastButton** | The content of 'lastButton' button. | `ReactNode` | <React.Fragment>&raquo;</React.Fragment> |
+| **limit** | Maximum items number. | `number` | 5 |
+| **nextButton** | The content of 'nextButton' button. | `ReactNode` | <React.Fragment>&rsaquo;</React.Fragment> |
+| **onActivePageChange** | On active page change callback. | `(activePage: number) => void` | - |
+| **pages** | Number of pages. | `number` | - |
+| **previousButton** | The content of 'previousButton' button. | `ReactNode` | <React.Fragment>&lsaquo;</React.Fragment> |
+| **size** | Size of pagination, valid values: 'sm', 'lg'. | `'sm'` \| `'lg'` | - |

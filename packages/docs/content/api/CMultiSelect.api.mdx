@@ -1,0 +1,46 @@
+
+```jsx
+import { CMultiSelect } from '@coreui/react-pro'
+// or
+import CMultiSelect from '@coreui/react-pro/src/components/multi-select/CMultiSelect'
+```
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| **allowCreateOptions** **_4.11.0+_** | Allow users to create options if they are not in the list of options. | `boolean` | - |
+| **className** | A string of all className you want applied to the base component. | `string` | - |
+| **cleaner** | Enables selection cleaner element. | `boolean` | true |
+| **clearSearchOnSelect** **_4.11.0+_** | Clear current search on selecting an item. | `boolean` | - |
+| **disabled** | Toggle the disabled state for the component. | `boolean` | - |
+| **feedback** **_4.2.0+_** | Provide valuable, actionable feedback. | `ReactNode` | - |
+| **feedbackInvalid** **_4.2.0+_** | Provide valuable, actionable feedback. | `ReactNode` | - |
+| **feedbackValid** **_4.2.0+_** | Provide valuable, actionable invalid feedback when using standard HTML form validation which applied two CSS pseudo-classes, `:invalid` and `:valid`. | `ReactNode` | - |
+| **id** | The id global attribute defines an identifier (ID) that must be unique in the whole document.<br/><br/>The name and id attributes for the native select element are generated based on the `id` property:<br/>- <select id="\{id\}-multi-select" name="\{id\}-multi-select" /> | `string` | - |
+| **invalid** | Set component validation state to invalid. | `boolean` | - |
+| **label** **_4.2.0+_** | Add a caption for a component. | `ReactNode` | - |
+| **loading** **_4.11.0+_** | When set, the options list will have a loading style: loading spinner and reduced opacity. | `boolean` | - |
+| **multiple** | It specifies that multiple options can be selected at once. | `boolean` | true |
+| **onChange** | Execute a function when a user changes the selected option. | `(selected: Option[]) => void` | - |
+| **onFilterChange** **_4.8.0+_** | Execute a function when the filter value changed. | `(value: string) => void` | - |
+| **onHide** | The callback is fired when the Multi Select component requests to be hidden. | `() => void` | - |
+| **onShow** | The callback is fired when the Multi Select component requests to be shown. | `() => void` | - |
+| **options** | List of option elements. | `(Option` \| `OptionsGroup)[]` | - |
+| **optionsGroupsTemplate** **_4.12.0+_** | Custom template for options groups. | `(option: OptionsGroup) => ReactNode` | - |
+| **optionsMaxHeight** | Sets maxHeight of options list. | `string` \| `number` | auto |
+| **optionsStyle** | Sets option style. | `'text'` \| `'checkbox'` | checkbox |
+| **optionsTemplate** **_4.12.0+_** | Custom template for options. | `(option: Option) => ReactNode` | - |
+| **placeholder** | Specifies a short hint that is visible in the search input. | `string` | Select... |
+| **required** | When it is present, it indicates that the user must choose a value before submitting the form. | `boolean` | - |
+| **search** | Enables search input element. | `boolean` \| `'external'` | true |
+| **searchNoResultsLabel** | Sets the label for no results when filtering. | `ReactNode` | No results found |
+| **selectAll** | Enables select all button. | `boolean` | true |
+| **selectAllLabel** | Sets the select all button label. | `ReactNode` | Select all options |
+| **selectionType** | Sets the selection style. | `'text'` \| `'counter'` \| `'tags'` | tags |
+| **selectionTypeCounterText** | Sets the counter selection label. | `string` | item(s) selected |
+| **size** | Size the component small or large. | `'sm'` \| `'lg'` | - |
+| **text** **_4.2.0+_** | Add helper text to the component. | `ReactNode` | - |
+| **tooltipFeedback** **_4.2.0+_** | Display validation feedback in a styled tooltip. | `boolean` | - |
+| **valid** | Set component validation state to valid. | `boolean` | - |
+| **virtualScroller** **_4.8.0+_** | Enable virtual scroller for the options list. | `boolean` | - |
+| **visible** | Toggle the visibility of multi select dropdown. | `boolean` | false |
+| **visibleItems** **_4.8.0+_** | Amount of visible items when virtualScroller is set to `true`. | `number` | 10 |

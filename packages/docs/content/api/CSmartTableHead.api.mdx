@@ -1,0 +1,30 @@
+
+```jsx
+import { CSmartTableHead } from '@coreui/react-pro'
+// or
+import CSmartTableHead from '@coreui/react-pro/src/components/smart-table/CSmartTableHead'
+```
+
+| Property | Description | Type | Default |
+| --- | --- | --- | --- |
+| **as** | - | `(ElementType & 'symbol')` \| `(ElementType & 'object')` \| `(ElementType & 'thead')` \| `(ElementType & 'slot')` \| `(ElementType & 'style')` \| `... 174 more ...` \| `(ElementType & FunctionComponent<...>)` | - |
+| **className** | A string of all className you want applied to the component. | `string` | - |
+| **color** | Sets the color context of the component to one of CoreUI’s themed colors. | `'primary'` \| `'secondary'` \| `'success'` \| `'danger'` \| `'warning'` \| `'info'` \| `'dark'` \| `'light'` \| `string` | - |
+| **columnFilter** | - | `boolean` \| `ColumnFilter` | - |
+| **columnFilterState** | - | `ColumnFilterValue` | - |
+| **columnSorter** | - | `boolean` \| `Sorter` | - |
+| **columns** | - | `(string` \| `Column)[]` | - |
+| **handleFilterOnChange** | - | `(key: string, value: string) => void` | - |
+| **handleFilterOnInput** | - | `(key: string, value: string) => void` | - |
+| **handleOnCustomFilterChange** | - | `(key: string, value: any) => void` | - |
+| **handleSelectAllChecked** | - | `() => void` | - |
+| **handleSort** | - | `(key: string, index: number, order?: 'desc'` \| `'asc') => void` | - |
+| **items** | - | `Item[]` | - |
+| **selectAll** | - | `boolean` \| `{ external?: boolean; }` | - |
+| **selectable** | - | `boolean` | - |
+| **selectedAll** | - | `string` \| `boolean` | - |
+| **showGroups** | - | `boolean` | true |
+| **sorterState** | - | `SorterValue` | - |
+| **sortingIcon** | - | `ReactNode` | - |
+| **sortingIconAscending** | - | `ReactNode` | - |
+| **sortingIconDescending** | - | `ReactNode` | - |
