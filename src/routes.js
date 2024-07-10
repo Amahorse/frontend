@@ -60,8 +60,6 @@ const GoogleMaps = React.lazy(() => import('./views/plugins/google-maps/GoogleMa
 
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 
-const Invoice = React.lazy(() => import('./views/apps/invoicing/Invoice'))
-
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
@@ -116,13 +114,6 @@ const routes = [
   { path: '/plugins/google-maps', name: 'GoogleMaps', element: GoogleMaps },
   { path: '/smart-table', name: 'Smart Table', element: SmartTable },
   { path: '/widgets', name: 'Widgets', element: Widgets },
-  { path: '/apps', name: 'Apps', element: Invoice, exact: true },
-  { path: '/apps/invoicing', name: 'Invoice', element: Invoice, exact: true },
-  { path: '/apps/invoicing/invoice', name: 'Invoice', element: Invoice },
-  { path: '/apps/email', name: 'Email', exact: true },
-  { path: '/apps/email/inbox', name: 'Inbox', exact: true },
-  { path: '/apps/email/compose', name: 'Compose', exact: true },
-  { path: '/apps/email/message', name: 'Message', exact: true },
 ]
 
 export default routes
