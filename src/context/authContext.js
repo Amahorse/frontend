@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password) => {
     try {
-      const response = await axios.post('/api/login', { username, password });
+      const response = await axios.post(`${process.env.API_URL}/oauth/login`, { username, password });
       setUser(response.data);
     } catch (error) {
       console.error(error);
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('/api/logout', {}, { withCredentials: true });
+      await axios.post(`${process.env.API_URL}/oauth/logout`, {}, { withCredentials: true });
       setUser(null);
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ export const AuthProvider = ({ children }) => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.post('/api/refresh', { refreshToken: user.refreshToken });
+      const response = await axios.post(`${process.env.API_URL}/oauth/token`, { refreshToken: user.refreshToken });
       setUser((prevUser) => ({ ...prevUser, accessToken: response.data.accessToken }));
     } catch (error) {
       console.error(error);

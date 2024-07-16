@@ -15,10 +15,13 @@ const AuthProvider = ({ children }) => {
 
   // Function to set the authentication token
   const setToken = (newToken) => {
+
     setToken_(newToken);
   };
 
   useEffect(() => {
+
+
     if (token) {
       axios.defaults.headers.common["Authorization"] = "Bearer " + token;
       localStorage.setItem('token',token);
@@ -44,6 +47,7 @@ const AuthProvider = ({ children }) => {
 };
 
 export const useAuth = () => {
+
   return useContext(AuthContext);
 };
 

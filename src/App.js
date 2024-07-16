@@ -1,5 +1,6 @@
 import React, { Component, Suspense } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { ProtectedRoute } from './routes/protectedRoute'
 import './scss/style.scss'
 
 const loading = (
@@ -24,7 +25,7 @@ class App extends Component {
       <BrowserRouter>
         <Suspense fallback={loading}>
           <Routes>
-            <Route exact path="*" name="Control Panel" element={<DefaultLayout />} />
+            <Route exact path="*" name="Control Panel" element={<ProtectedRoute />} />
             <Route exact path="/" name="Login Page" element={<Login />} />
             <Route exact path="/register" name="Register Page" element={<Register />} />
             <Route exact path="/404" name="Page 404" element={<Page404 />} />
