@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["shared/*"],
+      "@elements/*": ["elements/*"],
+      "@workspace/api-docs": ["shared/ui/api-docs/src/index.ts"],
+      "@workspace/app-offline": ["shared/ui/app-offline/src/index.ts"],
+      "@workspace/config": ["services/src/index.ts"],
+      "@workspace/panel": ["shared/ui/panel/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
