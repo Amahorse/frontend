@@ -21,15 +21,11 @@
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/admin/assets"
-          },
-          {
-            "glob": "**/*",
             "input": "shared/assets",
             "output": "./assets"
           }
         ],
-        "styles": ["apps/admin/src/scss/styles.scss"],
+        "styles": ["shared/ui/panel/src/scss/styles.scss"],
         "scripts": []
       },
       "configurations": {
