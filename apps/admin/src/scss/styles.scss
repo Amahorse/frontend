@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+// Import CoreUI functions
+@import "@coreui/coreui-pro/scss/functions";
 
 // If you want to override variables do it here
 @import "variables";
+@import "variables-dark";
 
 // Import styles with default layout.
 @import "@coreui/coreui-pro/scss/coreui";
@@ -18,6 +21,3 @@
 // If you want to add custom CSS you can put it here.
 @import "custom";
 
-// Examples
-// We use those styles to show code examples, you should remove them in your application.
-@import "examples";

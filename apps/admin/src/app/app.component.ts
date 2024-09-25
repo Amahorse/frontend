@@ -5,7 +5,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/ro
 import { delay, filter, map, tap } from 'rxjs/operators';
 import { ColorModeService } from '@coreui/angular-pro';
 import { IconSetService } from '@coreui/icons-angular';
-import { iconSubset } from './icons/icon-subset';
+import { iconSubset } from '@shared/ui/panel/src/lib/icons/icon-subset';
 import { TranslateModule } from '@ngx-translate/core';  
 
 
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     this.#titleService.setTitle(this.title);
     // iconSet singleton
     this.#iconSetService.icons = { ...iconSubset };
-    this.#colorModeService.localStorageItemName.set('coreui-pro-angular-admin-template-theme-default');
+    this.#colorModeService.localStorageItemName.set('coreui-pro-angular-admin-template-theme-bright');
     this.#colorModeService.eventName.set('ColorSchemeChange');
 
   }

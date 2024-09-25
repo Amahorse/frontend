@@ -1,11 +1,14 @@
 import { NgStyle, NgTemplateOutlet } from '@angular/common';
 import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { TranslationService } from '@shared/libs/language/translation.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 import {
   AvatarComponent,
   BadgeComponent,
   BreadcrumbRouterComponent,
+  ButtonDirective,
   ColorModeService,
   ContainerComponent,
   DropdownComponent,
@@ -14,9 +17,13 @@ import {
   DropdownItemDirective,
   DropdownMenuDirective,
   DropdownToggleDirective,
+  FormControlDirective,
+  FormDirective,
   HeaderComponent,
   HeaderNavComponent,
   HeaderTogglerDirective,
+  InputGroupComponent,
+  InputGroupTextDirective,
   NavItemComponent,
   NavLinkDirective,
   ProgressBarDirective,
@@ -32,12 +39,15 @@ import { IconDirective } from '@coreui/icons-angular';
   selector: 'app-default-header',
   templateUrl: './default-header.component.html',
   standalone: true,
-  imports: [ContainerComponent, HeaderTogglerDirective, SidebarToggleDirective, IconDirective, HeaderNavComponent, NavItemComponent, NavLinkDirective, RouterLink, RouterLinkActive, NgTemplateOutlet, BreadcrumbRouterComponent, ThemeDirective, DropdownComponent, DropdownToggleDirective, TextColorDirective, AvatarComponent, DropdownMenuDirective, DropdownHeaderDirective, DropdownItemDirective, BadgeComponent, DropdownDividerDirective, ProgressBarDirective, ProgressComponent, NgStyle]
+  imports: [ContainerComponent, HeaderTogglerDirective, SidebarToggleDirective, IconDirective, HeaderNavComponent, NavItemComponent, NavLinkDirective, RouterLink, RouterLinkActive, NgTemplateOutlet, BreadcrumbRouterComponent, ThemeDirective, DropdownComponent, DropdownToggleDirective, TextColorDirective, AvatarComponent, DropdownMenuDirective, DropdownHeaderDirective, DropdownItemDirective, BadgeComponent, DropdownDividerDirective, ProgressBarDirective, ProgressComponent, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective, NgStyle, FormDirective, TranslateModule]
 })
 export class DefaultHeaderComponent extends HeaderComponent {
 
   readonly #colorModeService = inject(ColorModeService);
   readonly colorMode = this.#colorModeService.colorMode;
+
+  translationService = inject(TranslationService);
+
 
   readonly colorModes = [
     { name: 'light', text: 'Light', icon: 'cilSun' },
@@ -55,6 +65,10 @@ export class DefaultHeaderComponent extends HeaderComponent {
   }
 
   sidebarId = input('sidebar1');
+
+  public langIcon(lang: string) {
+    return lang === 'en' ? 'Gb' : 'It';
+  }
 
   public newMessages = [
     {

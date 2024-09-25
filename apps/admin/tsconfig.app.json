@@ -2,12 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
-    "types": [],
-    "paths": {
-//      "@angular/*": [ "./node_modules/@angular/*" ],
-//      "@coreui/*": ["./node_modules/@coreui/*"],
-      "@docs-components/*": ["apps/admin/src/components/*"]
-    }
+    "types": []
   },
   "files": ["src/main.ts"],
   "include": ["src/**/*.d.ts"],

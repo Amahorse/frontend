@@ -14,22 +14,28 @@ import { Injectable, NgModule } from '@angular/core';
  export class TranslationService {
 
 
-   //NOTA: Queste due variabili dovrebbero essere definite dal config in startup (defaultLang = config.default.language + avialableLangs = config.app.languages) 
+   //NOTA: Queste due variabili dovrebbero essere definite dal config in startup (defaultLang = config.default.language + availableLangs = config.app.languages) 
    defaultLang = 'it';
 
-   avialableLangs = ['it', 'en'];
+   availableLangs = ['it', 'en'];
+
+   currentLang = this.defaultLang;
 
    constructor(
 
      private translateService: TranslateService) {
 
-      this.translateService.addLangs(this.avialableLangs);
+      this.translateService.addLangs(this.availableLangs);
 
       this.translateService.setDefaultLang(this.defaultLang);
      
    }
 
    changeLang(lang: string) {
+
+      this.currentLang = lang;
+
       this.translateService.use(lang);
+      
    }
  }

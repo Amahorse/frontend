@@ -9,7 +9,11 @@ import { SwaggerUIBundle, SwaggerUIStandalonePreset } from "swagger-ui-dist";
   templateUrl: './swagger-dev.component.html',
   styleUrls: ['./swagger-dev.component.scss'],
 })
+
+
 export class SwaggerDevComponent implements OnInit {
+
+  
 
   ngOnInit() {
 
@@ -27,5 +31,7 @@ export class SwaggerDevComponent implements OnInit {
     });
 
   }
+
+
 
 }

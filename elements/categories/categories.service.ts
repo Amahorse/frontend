@@ -18,11 +18,23 @@ export class CategoriesService {
   }
 
   list(filters?: {}) {
-
     var queryString = '';
 
     if (filters == undefined) {
       filters = {};
+    }
+
+    //Filtro store di default se non è applicato
+    if (filters['type'] == undefined) {
+      filters['type'] = 'store';
+    }
+
+    if (filters['status'] == undefined) {
+      filters['status'] = 'published';
+    }
+
+    if (filters['orderby'] == undefined) {
+      filters['orderby'] = 'evidence DESC';
     }
 
     Object.entries(filters).forEach(([key, value]) => {

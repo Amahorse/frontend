@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
-import { LoginComponent, Page500Component, Page404Component, RegisterComponent } from 'shared/ui/panel/src/index';
+import { LoginComponent, Page500Component, Page404Component, RegisterComponent } from '@shared/ui/panel/src/index';
 
 export const routes: Routes = [
   {
@@ -22,38 +22,6 @@ export const routes: Routes = [
       {
         path: 'theme',
         loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
-      },
-      {
-        path: 'base',
-        loadChildren: () => import('./views/base/routes').then((m) => m.routes)
-      },
-      {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/routes').then((m) => m.routes)
-      },
-      {
-        path: 'forms',
-        loadChildren: () => import('./views/forms/routes').then((m) => m.routes)
-      },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/routes').then((m) => m.routes)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/routes').then((m) => m.routes)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/routes').then((m) => m.routes)
-      },
-      {
-        path: 'smart-table',
-        loadChildren: () => import('./views/smart-tables/routes').then((m) => m.routes)
-      },
-      {
-        path: 'plugins',
-        loadChildren: () => import('./views/plugins/routes').then((m) => m.routes)
       }
     ]
   },
