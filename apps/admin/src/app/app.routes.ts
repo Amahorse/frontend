@@ -20,8 +20,36 @@ export const routes: Routes = [
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
       {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/routes').then((m) => m.routes)
+        path: 'new-order',
+        loadChildren: () => import('./views/new-order/routes').then((m) => m.routes)
+      },
+      {
+        path: 'orders-history',
+        loadChildren: () => import('./views/orders-history/routes').then((m) => m.routes)
+      },
+      {
+        path: 'listing-download',
+        loadChildren: () => import('./views/listing-download/routes').then((m) => m.routes)
+      },
+      {
+        path: 'statistics',
+        loadChildren: () => import('./views/statistics/routes').then((m) => m.routes)
+      },
+      {
+        path: 'dropshipping',
+        loadChildren: () => import('./views/dropshipping/routes').then((m) => m.routes)
+      },
+      {
+        path: 'api-docs',
+        loadChildren: () => import('./views/api-docs/routes').then((m) => m.routes)
+      },
+      {
+        path: 'help-center',
+        loadChildren: () => import('./views/help-center/routes').then((m) => m.routes)
+      },
+      {
+        path: 'communication-kit',
+        loadChildren: () => import('./views/communication-kit/routes').then((m) => m.routes)
       }
     ]
   },
