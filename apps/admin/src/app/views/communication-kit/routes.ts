@@ -5,7 +5,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./communication-kit.component').then(m => m.CommunicationKitComponent),
     data: {
-      title: `Communication Kit`
+      title: `menu.communication_kit`
     }
   }
 ];

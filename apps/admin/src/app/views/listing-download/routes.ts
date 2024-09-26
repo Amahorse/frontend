@@ -5,7 +5,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./listing-download.component').then(m => m.ListingDownloadComponent),
     data: {
-      title: `Listing Download`
+      title: `menu.listing_download`
     }
   }
 ];

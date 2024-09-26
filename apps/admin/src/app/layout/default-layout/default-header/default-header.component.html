@@ -63,21 +63,21 @@
     </button>
     <ul cDropdownMenu class="pt-0 w-auto">
       <li>
-        <a cDropdownItem routerLink="">
+        <a cDropdownItem routerLink="/profile/user">
           <svg cIcon class="me-1" name="cilUser"></svg>
-          Profile
+          {{ 'menu.user' | translate }}
         </a>
       </li>
       <li>
-        <a cDropdownItem routerLink="">
+        <a cDropdownItem routerLink="/profile/settings">
           <svg cIcon class="me-1" name="cilSettings"></svg>
-          Settings
+          {{ 'menu.settings' | translate }}
         </a>
       </li>
       <li>
         <a cDropdownItem routerLink="">
           <svg cIcon class="me-1" name="cilAccountLogout"></svg>
-          Logout
+          {{ 'menu.logout' | translate }}
         </a>
       </li>
     </ul>

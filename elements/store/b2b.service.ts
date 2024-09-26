@@ -1,24 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Categories } from './categories.interface';
+import { Product } from './products.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriesService {
+export class B2bService {
 
   constructor(private http: HttpClient) { }
 
   get(id: number) {
-    return this.http.get<Categories>(`/categories/${id}`)
+    return this.http.get<Product>(`/store/b2b/${id}`)
   }
 
   slug(slug: string) {
-    return this.http.get<Categories>(`/categories/${slug}`)
+    return this.http.get<Product>(`/store/b2b/${slug}`)
   }
 
   list(filters?: {}) {
-    
     var queryString = '';
 
     if (filters == undefined) {
@@ -33,6 +32,6 @@ export class CategoriesService {
       }
     });
 
-    return this.http.get<Categories[]>(`/categories` + queryString);
+    return this.http.get<Product[]>(`/store/b2b` + queryString);
   }
 }

@@ -5,7 +5,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./help-center.component').then(m => m.HelpCenterComponent),
     data: {
-      title: `Help Center`
+      title: `menu.help_center`
     }
   }
 ];

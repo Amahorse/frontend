@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Dropshipping'
+      title: 'menu.dropshipping'
     },
     children: [
       {
@@ -16,21 +16,21 @@ export const routes: Routes = [
         path: 'new-order',
         loadComponent: () => import('./dropshipping-new-order/dropshipping-new-order.component').then(m => m.DropshippingNewOrderComponent),
         data: {
-          title: 'New Order'
+          title: 'menu.new_order'
         }
       },
       {
         path: 'orders-history',
         loadComponent: () => import('./dropshipping-orders-history/dropshipping-orders-history.component').then(m => m.DropshippingOrdersHistoryComponent),
         data: {
-          title: 'Orders History'
+          title: 'menu.orders_history'
         }
       },
       {
         path: 'customers',
         loadComponent: () => import('./dropshipping-customers/dropshipping-customers.component').then(m => m.DropshippingCustomersComponent),
         data: {
-          title: 'Customers'
+          title: 'menu.customers'
         }
       },
     ]

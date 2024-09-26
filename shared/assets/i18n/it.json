@@ -19,6 +19,7 @@
   },
   "menu" : {
     "home" : "Home",
+    "dashboard" : "Dashboard",
     "new_order" : "Nuovo ordine",
     "orders_history" : "Storico Ordini",
     "listing_download" : "Scarica Listino",
@@ -28,6 +29,10 @@
     "api" : "API",
     "help_center" : "Centro Assistenza",
     "api_documentation" : "Documentazione API",
-    "communication_kit" : "Kit Comunicazione"
+    "communication_kit" : "Kit Comunicazione",
+    "profile" : "Profilo",
+    "user" : "Modifica Dati",
+    "settings" : "Impostazioni",
+    "logout" : "Esci"
   }
 }

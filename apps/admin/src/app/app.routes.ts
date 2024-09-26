@@ -50,6 +50,10 @@ export const routes: Routes = [
       {
         path: 'communication-kit',
         loadChildren: () => import('./views/communication-kit/routes').then((m) => m.routes)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./views/profile/routes').then((m) => m.routes)
       }
     ]
   },

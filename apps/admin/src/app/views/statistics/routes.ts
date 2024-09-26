@@ -5,7 +5,7 @@ export const routes: Routes = [
     path: '',
     loadComponent: () => import('./statistics.component').then(m => m.StatisticsComponent),
     data: {
-      title: `Statistics`
+      title: `menu.statistics`
     }
   }
 ];

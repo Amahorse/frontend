@@ -15,6 +15,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "types": ["node"],
     "paths": {
       "@elements/*": ["elements/*"],
       "@shared/*": ["shared/*"],

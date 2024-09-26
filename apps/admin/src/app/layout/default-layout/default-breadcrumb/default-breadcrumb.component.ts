@@ -3,19 +3,22 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { BreadcrumbRouterComponent, RowComponent } from '@coreui/angular-pro';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-default-breadcrumb',
   standalone: true,
   imports: [
     BreadcrumbRouterComponent,
-    RowComponent
+    RowComponent,
+    TranslateModule
   ],
   templateUrl: './default-breadcrumb.component.html',
 })
 export class DefaultBreadcrumbComponent {
 
   public title!: string;
+
   readonly #router = inject(Router);
 
   constructor() {
