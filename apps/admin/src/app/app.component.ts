@@ -16,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [RouterOutlet, TranslateModule]
 })
 export class AppComponent implements OnInit {
-  title = 'CoreUI Pro Angular Admin Template';
+  title = 'Amahorse Partners';
 
   readonly #destroyRef: DestroyRef = inject(DestroyRef);
   readonly #activatedRoute: ActivatedRoute = inject(ActivatedRoute);
