@@ -1,1 +1,6 @@
-<p>new-order works!</p>
+
+<c-container fluid>
+    <c-row ngPreserveWhitespaces>
+        <app-product-card *ngFor="let product of this.products" [product]="product"></app-product-card>
+    </c-row>
+</c-container>

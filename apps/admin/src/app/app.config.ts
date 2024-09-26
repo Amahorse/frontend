@@ -12,8 +12,8 @@ import { DropdownModule, SidebarModule } from '@coreui/angular-pro';
 import { IconSetService } from '@coreui/icons-angular';
 import { routes } from './app.routes';
 import { TranslationService } from '@shared/libs/language/translation.service';
-import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
-//import { AuthInterceptor } from '@shared/libs/auth/auth.interceptor'; // Ensure AuthInterceptor is a class
+import { provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
+import { AuthInterceptor } from '@shared/libs/auth/auth.interceptor'; // Ensure AuthInterceptor is a class
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -31,6 +31,6 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom(SidebarModule, DropdownModule, TranslationService),
     IconSetService,
     provideAnimations(),
-    provideHttpClient()
+    provideHttpClient( withInterceptors([AuthInterceptor]) )
   ]
 };

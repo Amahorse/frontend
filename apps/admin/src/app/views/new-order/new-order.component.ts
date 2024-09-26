@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { B2bService } from '@elements/store/b2b.service';
+import { ProductCardComponent } from 'apps/admin/src/components/product-card/product-card.component';
+import { ContainerComponent, RowComponent } from '@coreui/angular-pro';
 
 @Component({
   selector: 'app-new-order',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ProductCardComponent, RowComponent, ContainerComponent],
   templateUrl: './new-order.component.html',
   styleUrl: './new-order.component.scss',
 })
@@ -16,11 +18,10 @@ export class NewOrderComponent {
 
   constructor(private b2b: B2bService) {
 
-    /*
     this.b2b.list().subscribe((products) => {
       this.products = products;
     });
-    */
+    
   }
 
 

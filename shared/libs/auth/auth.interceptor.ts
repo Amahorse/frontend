@@ -1,22 +1,21 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import { inject } from '@angular/core';
-import { authService, authUrl } from '../auth/auth.service';
+import { authUrl } from './auth.service';
 
+export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
 
-export const authInterceptor: HttpInterceptorFn = (req, next) => {
-
-  //La richiesta di token non viene intercettata
-  if(req.url === authUrl) {
+    //La richiesta di token o agli asset non viene intercettata
+  if (req.url.includes('/assets/' || req.url === authUrl)) {
     return next(req);
   }
 
-  const auth = inject(authService);
 
-  const token = auth.get();
+  //const auth = inject(authService);
+
+  //const token = auth.get();
 
   const cloneRequest =  req.clone({ 
-    url: process.env['API_URL'] + req.url, 
-    headers: req.headers.set('Authorization', `Bearer ${token}`) 
+    url: 'http://api.amahorse.localhost' + req.url, 
+    //headers: req.headers.set('Authorization', `Bearer ${token}`) 
   });
   
 

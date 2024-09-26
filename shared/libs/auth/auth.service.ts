@@ -4,13 +4,13 @@ import { tokenService } from '../token/token.service';
 import { Token } from '../token/token.interface';
 import { catchError, first, throwError } from 'rxjs';
 
-export const authUrl = process.env['API_URL'] + '/oauth/token?client_id=' + process.env['API_CLIENT_ID'];
+export const authUrl = '/oauth/token?client_id=';//+ process.env['API_CLIENT_ID'];
 
 @Injectable(
   {providedIn: 'root'}
 )
 export class authService {
-
+  /*
     constructor(private http: HttpClient, public tokenService: tokenService) {}
 
     async get(): Promise<Token> {
@@ -34,6 +34,6 @@ export class authService {
 
       return this.tokenService.token;
     }
-
+*/
   
 }
