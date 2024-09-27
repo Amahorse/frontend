@@ -7,6 +7,11 @@
     <h6 cCardTitle>{{ product?.title }}</h6>
     <h8 cCardTitle>{{ product?.brand_code }}</h8>
     <h8 cCardTitle>{{ 'products.family.' + product?.family | translate }}</h8>
+    <ul>
+      <li *ngFor="let cat of product?.categories">
+        {{cat.category}}
+      </li>
+    </ul>
     <!-- <h8 cCardTitle>{{ product?.category_name }}</h8> -->
     <!-- <p cCardText>
       Some quick example text to build on the card title and make up the bulk of
