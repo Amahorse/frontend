@@ -1,11 +1,16 @@
-
-    <c-card> 
-      <c-card-body>
-        <h5 cCardTitle>{{product?.title}}</h5>
-        <p cCardText>
-          Some quick example text to build on the card title and make up the bulk of the card's content.
-        </p>
-        <button cButton color="primary">Go somewhere</button>
-      </c-card-body>
-    </c-card>
-
+<c-card class="product-card">
+  <c-card-body class="product-card-body">
+    <h5 cCardTitle>{{ product?.code }}</h5>
+    <h6 cCardTitle>{{ product?.title }}</h6>
+    <h8 cCardTitle>{{ product?.brand_code }}</h8>
+    <h8 cCardTitle>{{ product?.family }}</h8>
+    <!-- <h8 cCardTitle>{{ product?.category_name }}</h8> -->
+    <!-- <p cCardText>
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p> -->
+    <button class="product-card-button" cButton color="primary">
+      Go somewhere
+    </button>
+  </c-card-body>
+</c-card>
