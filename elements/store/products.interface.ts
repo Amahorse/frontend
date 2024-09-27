@@ -16,6 +16,7 @@ export interface ProductVariant {
     a4_description: string | null;
     a4_order: string | null;
     cover: string | null;
+    cover_url: string | null;
     minimum_order: number;
     id_store_products: number;
     currency: string;

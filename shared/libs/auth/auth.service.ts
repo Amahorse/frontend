@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { tokenService } from '../token/token.service';
 import { Token } from '../token/token.interface';
 import { catchError, first, throwError } from 'rxjs';
-
-export const authUrl = '/oauth/token?client_id=';//+ process.env['API_CLIENT_ID'];
+import type {Config} from 'jest';
+//TODO: import type non dovrebbe servire, mettere a posto caricamento jest da config https://dev.to/lbenie/how-to-add-types-with-jest-and-typescript-1bai
+export const authUrl = '/oauth/token?client_id='; // + process.env['API_CLIENT_ID'];
 
 @Injectable(
   {providedIn: 'root'}

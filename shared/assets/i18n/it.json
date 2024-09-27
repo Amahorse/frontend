@@ -4,14 +4,29 @@
     "missing_username" : "Email mancante",
     "missing_password" : "Password mancante"
   },
-  "store_products.color_primary": {
-    "red" : "Rosso",
-    "green" : "Verde",
-    "blue" : "Blu",
-    "yellow" : "Giallo",
-    "orange" : "Arancione",
-    "purple" : "Viola",
-    "black" : "Nero"
+  "buttons" : {
+    "add_to_cart" : "Aggiungi al Carrello"
+  },
+  "products" : {
+    "family": {
+      "english_riding": "Monta Inglese",
+      "western_riding": "Monta Western",
+      "others_riding": "Altre Monte",
+      "stable": "Scuderia",
+      "pet": "Animali",
+      "display": "Esposizione"
+    }
+  },
+  "store_products" : {
+    "color_primary": {
+      "red" : "Rosso",
+      "green" : "Verde",
+      "blue" : "Blu",
+      "yellow" : "Giallo",
+      "orange" : "Arancione",
+      "purple" : "Viola",
+      "black" : "Nero"
+    }
   },
   "languages" : {
     "it" : "Italiano",
