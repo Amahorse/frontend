@@ -25,7 +25,7 @@
             "output": "./assets"
           }
         ],
-        "styles": ["shared/ui/panel/src/scss/styles.scss"],
+        "styles": ["shared/ui/panel/src/scss/styles.scss", "node_modules/swagger-ui-dist/swagger-ui.css"],
         "scripts": []
       },
       "configurations": {
