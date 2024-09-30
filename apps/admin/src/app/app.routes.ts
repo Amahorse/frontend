@@ -1,6 +1,10 @@
 import { Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
 import { LoginComponent, Page500Component, Page404Component, RegisterComponent } from '@shared/ui/panel/src/index';
+import { hasRoleGuard } from '@shared/libs/auth/auth.has-role-guard';
+
+//TODO: traduzione titoli pagine login etc
+//TODO: traduzione breadcrubmbs
 
 export const routes: Routes = [
   {
@@ -17,42 +21,57 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
+        canActivate: [hasRoleGuard],
+        /*
+        data: {
+          roles: [ Role.ADMIN ]
+        },
+        */
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
       {
         path: 'new-order',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/new-order/routes').then((m) => m.routes)
       },
       {
         path: 'orders-history',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/orders-history/routes').then((m) => m.routes)
       },
       {
         path: 'listing-download',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/listing-download/routes').then((m) => m.routes)
       },
       {
         path: 'statistics',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/statistics/routes').then((m) => m.routes)
       },
       {
         path: 'dropshipping',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/dropshipping/routes').then((m) => m.routes)
       },
       {
         path: 'api-docs',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/api-docs/routes').then((m) => m.routes)
       },
       {
         path: 'help-center',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/help-center/routes').then((m) => m.routes)
       },
       {
         path: 'communication-kit',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/communication-kit/routes').then((m) => m.routes)
       },
       {
         path: 'profile',
+        canActivate: [hasRoleGuard],
         loadChildren: () => import('./views/profile/routes').then((m) => m.routes)
       }
     ]
@@ -76,13 +95,6 @@ export const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
     }
   },
   { path: '**', redirectTo: 'dashboard' }

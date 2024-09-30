@@ -49,5 +49,13 @@
     "user" : "Modifica Dati",
     "settings" : "Impostazioni",
     "logout" : "Esci"
+  },
+  "login" : {
+    "title" : "Accedi",
+    "subtitle" : "Inserisci le tue credenziali per accedere",
+    "username" : "Email",
+    "password" : "Password",
+    "submit" : "Accedi",
+    "forgot_password" : "Password dimenticata?"
   }
-}
+} 
