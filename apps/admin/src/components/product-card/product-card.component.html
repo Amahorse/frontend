@@ -2,23 +2,34 @@
   <c-card-body class="product-card-body">
     <h5 cCardTitle>{{ product?.code }}</h5>
 
-      <img *ngIf="product?.neutral_image_url !== null" [cCardImg]="'top'" [src]="product?.neutral_image_url" [alt]="product?.title">
+    <img
+      *ngIf="product?.neutral_image !== null"
+      [cCardImg]="'top'"
+      [src]="product?.neutral_image"
+      [alt]="product?.title"
+    />
 
     <h6 cCardTitle>{{ product?.title }}</h6>
     <h8 cCardTitle>{{ product?.brand_code }}</h8>
     <h8 cCardTitle>{{ 'products.family.' + product?.family | translate }}</h8>
     <ul>
       <li *ngFor="let cat of product?.categories">
-        {{cat.category}}
+        {{ cat.category }}
       </li>
     </ul>
-    <!-- <h8 cCardTitle>{{ product?.category_name }}</h8> -->
-    <!-- <p cCardText>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </p> -->
-    <button class="product-card-button" cButton color="primary">
-      {{ 'buttons.add_to_cart' | translate }}
-    </button>
+    <div *ngFor="let variant of product?.variants">
+      <span *ngIf="variant?.a0_code !== null"
+        >{{ variant?.a0_code }} {{ variant?.a0_description }}
+        {{ variant?.availability }}
+      </span>
+      <span *ngIf="variant?.a1_code !== null"
+        >{{ variant?.a1_code }} {{ variant?.a1_description }}
+        {{ variant?.availability }}</span
+      >
+      <span *ngIf="variant?.a4_code !== null"
+        >{{ variant?.a4_code }} {{ variant?.a4_description }}
+        {{ variant?.availability }}</span
+      >
+    </div>
   </c-card-body>
 </c-card>
