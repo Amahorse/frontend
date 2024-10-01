@@ -3,9 +3,9 @@
     <h5 cCardTitle>{{ product?.code }}</h5>
 
     <img
-      *ngIf="product?.variants[0]?.cover_url !== null"
+      *ngIf="product?.neutral_image !== null"
       [cCardImg]="'top'"
-      [src]="product?.variants[0]?.cover_url.replace('dl=1', 'dl=0&raw=1')"
+      [src]="product?.neutral_image"
       [alt]="product?.title"
     />
 

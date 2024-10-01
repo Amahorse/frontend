@@ -36,7 +36,9 @@
                   />
                   <c-form-feedback *ngIf="submitted || ctrl.invalid" [valid]="!(submitted || ctrl.invalid)">
                     <ng-container *ngIf="ctrl.errors as errors">
-                      <div *ngIf="errors?.['required']">Email is required</div>
+                      <div *ngIf="errors?.['required']">
+                        {{ formErrors.email?.required }}
+                      </div>
                       <div *ngIf="errors?.['email']">
                         {{ formErrors.email?.email }}
                       </div>
@@ -65,9 +67,11 @@
                 />
                 <c-form-feedback *ngIf="submitted || ctrl.invalid" [valid]="!(submitted || ctrl.invalid)">
                   <ng-container *ngIf="ctrl.errors as errors">
-                    <div *ngIf="errors?.['required']">Password is required</div>
+                    <div *ngIf="errors?.['required']"> 
+                      {{ formErrors['password'].required }}
+                    </div>
                     <div *ngIf="errors?.['minLength']">
-                      {{ formErrors['password'].minLength }}
+                      {{ formErrors['password'].minLenght }}
                     </div>
                     <div *ngIf="errors['pattern']">
                       {{ formErrors['password'].pattern }}
