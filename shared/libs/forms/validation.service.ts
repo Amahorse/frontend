@@ -46,7 +46,7 @@ export class ValidationFormsService {
         pattern: 'Must contain letters and/or numbers, no trailing spaces'
       },
       email: {
-        required: 'required',
+        required: 'Email is Required',
         email: 'Invalid email address'
       },
       password: {

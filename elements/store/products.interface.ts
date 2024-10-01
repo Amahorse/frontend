@@ -50,6 +50,8 @@ export interface Product {
     a0: string | null;
     a1: string | null;
     a4: string | null;
+    neutral_image: string | null;
+    neutral_image_url: string | null;
     split: string | null;
     brand: string | null;
     brand_code: string | null;

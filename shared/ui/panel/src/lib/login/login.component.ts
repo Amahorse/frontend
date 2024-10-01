@@ -73,3 +73,5 @@ export class LoginComponent implements OnInit {
 
 
 }
+
+//TODO: la funzione [valid] degli input è sempre uguale, metterla in un servizio

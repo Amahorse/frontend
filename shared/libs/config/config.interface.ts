@@ -23,11 +23,6 @@ export interface Default {
     path: string;
 }
 
-export interface Api {
-    xname: string;
-    translate: boolean;
-}
-
 export interface Password {
     validate: string;
     minimum_length: number;
@@ -223,7 +218,6 @@ export interface Recaptcha {
 export interface Config {
     app: App;
     default: Default;
-    api: Api;
     password: Password;
     address: Address;
     panel: Panel;
