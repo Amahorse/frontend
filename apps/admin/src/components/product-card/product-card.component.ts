@@ -6,7 +6,6 @@ import { TranslateModule } from '@ngx-translate/core';
 
 import {
   BorderDirective,
-  ButtonDirective,
   CardBodyComponent,
   CardComponent,
   CardFooterComponent,
@@ -20,20 +19,38 @@ import {
   GutterDirective,
   ListGroupDirective,
   ListGroupItemDirective,
-  TextColorDirective
+  TextColorDirective,
 } from '@coreui/angular-pro';
-
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
   standalone: true,
-  imports: [CommonModule, TextColorDirective, CardComponent, CardHeaderComponent, CardBodyComponent, NgTemplateOutlet, CardTitleDirective, CardTextDirective, ButtonDirective, CardSubtitleDirective, CardLinkDirective, RouterLink, ListGroupDirective, ListGroupItemDirective, CardFooterComponent, BorderDirective, CardGroupComponent, GutterDirective, CardImgDirective, TranslateModule]
+  imports: [
+    CommonModule,
+    TextColorDirective,
+    CardComponent,
+    CardHeaderComponent,
+    CardBodyComponent,
+    NgTemplateOutlet,
+    CardTitleDirective,
+    CardTextDirective,
+    CardSubtitleDirective,
+    CardLinkDirective,
+    RouterLink,
+    ListGroupDirective,
+    ListGroupItemDirective,
+    CardFooterComponent,
+    BorderDirective,
+    CardGroupComponent,
+    GutterDirective,
+    CardImgDirective,
+    TranslateModule,
+  ],
 })
 export class ProductCardComponent {
-
   @Input() product?: Product;
 
-  constructor() { }
+  constructor() {}
 }
