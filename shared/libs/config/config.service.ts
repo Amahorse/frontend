@@ -1,30 +1,35 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Config } from './config.interface';
-import { catchError, throwError } from 'rxjs';
+import { lastValueFrom, throwError } from 'rxjs';
 
 @Injectable(
-    {providedIn: 'root'}
+  { providedIn: 'root' }
 )
 export class configService {
+  config!: Config
 
-    config!:Config
+  constructor(private http: HttpClient) { }
 
-    constructor(private http: HttpClient) {}
-    
-    async get(): Promise<Config> {
-        console.log('chiamata config');
-        this.http.get<Config>('/config').pipe(
+  async get(): Promise<Config> {
 
-            catchError((error: HttpErrorResponse)=>{
-              //TODO: qualsiasi errore dia questa chiamata deve mandare a una pagine html statica per dire che la app è offline
-              //TODO: sto throw error è deprecato
-              return throwError(error)
-            })
-          ).subscribe((data: Config) => {
-            this.config = data;
-        })
-        return this.config;
-    }
-  
+    const getConfig$ = this.http.get<Config>('/config');
+    await lastValueFrom(getConfig$).then((config_ret: Config) => {
+      this.config = config_ret;
+
+      console.log("CONFIG", this.config);
+      return config_ret;
+    }).catch(error => {
+
+      console.log("CONFIG GET ERR", error);
+      debugger;
+
+      //TODO: qualsiasi errore dia questa chiamata deve mandare a una pagine html statica per dire che la app è offline
+      console.error('Errore durante il caricamento del config:', error);
+      return throwError(() => error);
+    });
+
+    return this.config;
+  }
+
 }

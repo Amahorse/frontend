@@ -1,5 +1,6 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { configService } from '@shared/libs/config/config.service';
 import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
@@ -15,6 +16,7 @@ import { TranslationService } from '@shared/libs/language/translation.service';
 import { provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { AuthInterceptor } from '@shared/libs/auth/auth.interceptor'; // Ensure AuthInterceptor is a class
 
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes,
@@ -28,7 +30,7 @@ export const appConfig: ApplicationConfig = {
       withEnabledBlockingInitialNavigation(),
       withViewTransitions()
     ),
-    importProvidersFrom(SidebarModule, DropdownModule, TranslationService),
+    importProvidersFrom(SidebarModule, DropdownModule, TranslationService, configService),
     IconSetService,
     provideAnimations(),
     provideHttpClient( withInterceptors([AuthInterceptor]) )

@@ -37,6 +37,7 @@
     "@fullcalendar/timegrid": "^6.1.15",
     "@googlemaps/js-api-loader": "^1.16.8",
     "@googlemaps/markerclustererplus": "^1.2.10",
+    "@ngserveio/utilities": "^8.1.1",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@types/swagger-ui": "^3.52.4",
