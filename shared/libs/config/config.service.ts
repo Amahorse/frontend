@@ -15,6 +15,7 @@ export class configService {
 
     const getConfig$ = this.http.get<Config>('/config');
     await lastValueFrom(getConfig$).then((config_ret: Config) => {
+      
       this.config = config_ret;
 
       console.log("CONFIG", this.config);

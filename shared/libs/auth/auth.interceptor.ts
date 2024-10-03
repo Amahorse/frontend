@@ -13,23 +13,6 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   const auth = inject(authService);
-  const platformId = inject(PLATFORM_ID);
-  const isBrowser = isPlatformBrowser(platformId);
-
-  let CmsDomain = "";
-  if (isBrowser) {
-    if (window.location.host === 'localhost:4200' || 'new.bottle-up.com') {
-      CmsDomain = 'bottle-up.com';
-    } else {
-      CmsDomain = window.location.host;
-    }
-  } else {
-    // ----------------------
-    // TODO
-    // in SSR se chiamata server non è possibile utilizzare window.location perchè di browser
-    // cambiare la logicain base al lato server
-    // ----------------------
-  }
 
   // ----------------------
   // TODO
@@ -38,9 +21,6 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
   // const translate = inject(TranslationService);
   // const language = translate.currentLang;
 
-  // const type_page = process.env['TYPE_PAGE'] as string;
-  const type_page = 'b2c';
-  // ----------------------
 
   let token = null as Nullable<Token> | undefined;
 
@@ -65,10 +45,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
         const cloneRequest = req.clone({
           url: 'http://api.amahorse.localhost' + req.url,
           setHeaders: {
-            Authorization: `Bearer ${token?.access_token}`,
-            'X-Bu-Domain': CmsDomain,
-            'X-Bu-ClientType': type_page,
-            // 'X-Bu-Language': language  // TODO
+            Authorization: `Bearer ${token?.access_token}`
           }
         });
         // ------------------------

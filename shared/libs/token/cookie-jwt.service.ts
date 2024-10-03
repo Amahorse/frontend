@@ -23,7 +23,7 @@ export class CookieJwtService implements IJwtClaimsService {
     // risolvere la logica del process
     // ------------------
     // const name_cookie = process.env['JWT_COOKIE_NAME'] as string;
-    const name_cookie = 'BOTTLE_UP_COOKIE';
+    const name_cookie = 'AH_COOKIE';
     // ------------------
     const token = this.request?.cookies[name_cookie];
     return parseClaims<T>(token);
@@ -36,7 +36,7 @@ export class CookieJwtService implements IJwtClaimsService {
     // risolvere la logica del process
     // ------------------
     // const name_cookie = process.env['JWT_COOKIE_NAME'] as string;
-    const name_cookie = 'BOTTLE_UP_COOKIE';
+    const name_cookie = 'AH_COOKIE';
     this.response?.cookie(name_cookie, token);
   }
 }

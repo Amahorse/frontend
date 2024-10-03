@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { 
-  FormBuilder,
-  FormGroup,
-  FormsModule,
-  ReactiveFormsModule,
-  Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,FormsModule,ReactiveFormsModule,Validators } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule, NgStyle, JsonPipe } from '@angular/common';
 import { IconDirective } from '@coreui/icons-angular';
-import {  FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
+import { FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
 import { ValidationFormsService } from '@shared/libs/forms/validation.service';
+import { Authenticator } from '@shared/libs/auth/auth.authenticator';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +26,7 @@ export class LoginComponent implements OnInit {
   formControls!: string[];
 
   constructor(
+    private authenticator: Authenticator,
     private router: Router,
     private formBuilder: FormBuilder,
     public validationFormsService: ValidationFormsService
@@ -43,9 +41,20 @@ export class LoginComponent implements OnInit {
    
     if (this.onValidate()) {
 
-      localStorage.setItem('isLoggedin', 'true');
+      const data = {
+        email: 'test',
+        password: 'test'
+      };
+     
+      this.authenticator.login(data).subscribe({
+        next: () => {
+          this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          alert('Login failed: ' + error.message);
+        }
+      });
 
-      this.router.navigate(['/dashboard']);
     }
   }
 

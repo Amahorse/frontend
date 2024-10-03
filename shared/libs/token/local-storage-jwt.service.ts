@@ -13,7 +13,7 @@ export class SessionStorageJwtService implements IJwtClaimsService {
   // da risolvere process
   // ------------------
   // protected readonly JWT_TOKEN = 'JWT_TOKEN';
-  protected readonly JWT_TOKEN = 'BOTTLE_UP_JWT';
+  protected readonly JWT_TOKEN = 'AH_JWT';
   // ------------------
 
   protected get storage(): Storage {

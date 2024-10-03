@@ -30,6 +30,7 @@ export class authService {
         jwtServ.setToken(token_str);
         return data;
       }).catch(error => {
+        //TODO: rimandare a pagina statica di errore
         console.error('Errore durante il caricamento del token:', error);
         return throwError(() => error);
       });
