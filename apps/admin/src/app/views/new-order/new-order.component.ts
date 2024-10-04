@@ -26,7 +26,7 @@ export class NewOrderComponent {
   public products: any;
 
   constructor(private b2b: B2bService) {
-    this.b2b.list({ brand_code: 'AC' }).subscribe((products) => {
+    this.b2b.list().subscribe((products) => {
       this.products = products;
     });
   }

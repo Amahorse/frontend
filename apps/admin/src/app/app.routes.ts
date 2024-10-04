@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
-import { LoginComponent, Page500Component, Page404Component, RegisterComponent } from '@shared/ui/panel/src/index';
+import { LoginComponent, Page500Component, Page404Component } from '@shared/ui/panel/src/index';
 import { hasRoleGuard } from '@shared/libs/auth/auth.has-role-guard';
 
 //TODO: traduzione titoli pagine login etc

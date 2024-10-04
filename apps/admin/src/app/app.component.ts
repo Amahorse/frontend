@@ -7,13 +7,11 @@ import { ColorModeService } from '@coreui/angular-pro';
 import { IconSetService } from '@coreui/icons-angular';
 import { iconSubset } from '@shared/ui/panel/src/lib/icons/icon-subset';
 import { TranslateModule } from '@ngx-translate/core';  
-
-
 @Component({
   selector: 'app-root',
   template: '<router-outlet />',
   standalone: true,
-  imports: [RouterOutlet, TranslateModule]
+  imports: [RouterOutlet, TranslateModule ]
 })
 export class AppComponent implements OnInit {
   title = 'Amahorse Partners';
@@ -22,7 +20,6 @@ export class AppComponent implements OnInit {
   readonly #activatedRoute: ActivatedRoute = inject(ActivatedRoute);
   readonly #router = inject(Router);
   readonly #titleService = inject(Title);
-
   readonly #colorModeService = inject(ColorModeService);
   readonly #iconSetService = inject(IconSetService);
 
@@ -32,15 +29,9 @@ export class AppComponent implements OnInit {
     this.#iconSetService.icons = { ...iconSubset };
     this.#colorModeService.localStorageItemName.set('coreui-pro-angular-admin-template-theme-bright');
     this.#colorModeService.eventName.set('ColorSchemeChange');
-
   }
 
   ngOnInit(): void {
-
-
-
-    
-  
 
     this.#router.events.pipe(
         takeUntilDestroyed(this.#destroyRef)

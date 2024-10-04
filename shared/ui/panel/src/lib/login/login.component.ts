@@ -7,7 +7,7 @@ import { IconDirective } from '@coreui/icons-angular';
 import { FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
 import { ValidationFormsService } from '@shared/libs/forms/validation.service';
 import { Authenticator } from '@shared/libs/auth/auth.authenticator';
-import { catchError } from 'rxjs';
+import { LoadingComponent } from '@shared/ui/panel/src/lib/loading/loading.component';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ import { catchError } from 'rxjs';
   styleUrls: ['./login.component.scss'],
   providers: [ValidationFormsService],
   standalone: true,
-  imports: [ CommonModule, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupComponent, InputGroupTextDirective, ReactiveFormsModule, FormsModule, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective, NgStyle, TranslateModule]
+  imports: [CommonModule, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupComponent, InputGroupTextDirective, ReactiveFormsModule, FormsModule, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective, NgStyle, TranslateModule, LoadingComponent]
 })
 export class LoginComponent implements OnInit {
 
@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
     if (this.onValidate()) {
 
       const data = {
-        email: 'test',
-        password: 'test'
+        email: this.simpleForm.value.email as string,
+        password: this.simpleForm.value.password as string,
       };
      
       this.authenticator.login(data).subscribe({
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
-          alert('Login failed: ' + error.message);
+          alert(error.message);
         }
       });
 

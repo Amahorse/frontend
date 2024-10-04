@@ -1,5 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
+import { jwtClaimsService } from '../token/jwt.service';
 //import { AuthService } from './auth.service';
 //import { Role } from './role';
 
@@ -9,6 +10,8 @@ export const hasRoleGuard: CanActivateFn = (route, state) => {
   
   const router: Router = inject(Router);
 
+  let jwtServ = jwtClaimsService();
+  
   /*
   const userRole: Role = inject(authService).getUserRole();
   const expectedRoles: Role[] = route.data['roles'];
@@ -21,5 +24,5 @@ export const hasRoleGuard: CanActivateFn = (route, state) => {
   //TODO: impostazione su role per redirect unauthorized e ruoli applicazioni
   //TODO: su login pannello se uno è loggato deve rimandare a dashboard quindi deve fare l'inverso
 
-  return !!localStorage.getItem('isLoggedin') || router.navigate(['/']).then(() => false);
+  return !!jwtServ.getClaims || router.navigate(['/']).then(() => false);
 };

@@ -1,7 +1,7 @@
 <c-card class="product-card">
   <c-card-body class="product-card-body">
     <h5 cCardTitle>{{ product?.code }}</h5>
-
+   
     <img
       *ngIf="product?.neutral_image_url !== null"
       [cCardImg]="'top'"
@@ -18,6 +18,7 @@
       </li>
     </ul>
     <div *ngFor="let variant of product?.variants">
+      {{ variant?.total_to_pay }} {{ variant?.currency }}
       <span *ngIf="variant?.a0_code !== null"
         >{{ variant?.a0_code }} {{ variant?.a0_description }}
         {{ variant?.availability }}

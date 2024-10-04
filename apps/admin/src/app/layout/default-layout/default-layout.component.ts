@@ -16,9 +16,9 @@ import {
   SidebarTogglerDirective
 } from '@coreui/angular-pro';
 
+import { LoadingComponent } from '@shared/ui/panel/src/lib/loading/loading.component';
 import { DefaultAsideComponent, DefaultFooterComponent, DefaultHeaderComponent, DefaultBreadcrumbComponent } from './';
 import { navItems } from './_nav';
-
 
 function isOverflown(element: HTMLElement) {
   return (
@@ -49,8 +49,9 @@ function isOverflown(element: HTMLElement) {
     ContainerComponent,
     RouterOutlet,
     DefaultFooterComponent,
-    DefaultBreadcrumbComponent
-  ]
+    DefaultBreadcrumbComponent,
+    LoadingComponent
+]
 })
 export class DefaultLayoutComponent {
 
