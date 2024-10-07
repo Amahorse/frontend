@@ -23,7 +23,7 @@ export class authService {
     const jwtServ = jwtClaimsService();
     const claims = jwtServ.getClaims<Token>();
     if (!claims) {
-      console.log('chiamata token');
+
       const getToken$ = this.http.get<Token>(authUrl);
       await lastValueFrom(getToken$).then(data => {
         var token_str = JSON.stringify(data);

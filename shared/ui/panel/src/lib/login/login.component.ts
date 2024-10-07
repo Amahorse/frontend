@@ -48,9 +48,11 @@ export class LoginComponent implements OnInit {
      
       this.authenticator.login(data).subscribe({
         next: () => {
+          //TODO: se risposta non ha role di accesso deve apparire notifica che i dati sono corretti ma non ha autorizzazione
           this.router.navigate(['/dashboard']);
         },
         error: (error) => {
+          //TODO: gestire errori con notifiche in base al codice errore
           alert(error.message);
         }
       });

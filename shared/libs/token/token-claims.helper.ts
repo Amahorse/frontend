@@ -1,22 +1,27 @@
 import { Nullable } from "@ngserveio/utilities";
+import { jwtDecode } from "jwt-decode";
 
-// metodo originale che utilizza JWT
-// export const parseClaims = <T extends object>(
-//     token: Nullable<string>
-//   ): Nullable<T> => {
-//     const claims = token?.split('.');
-
-//     if (claims?.length !== 3) {
-//       return null;
-//     }
-
-//     const parsedToken = atob(claims[1]);
-//     return JSON.parse(parsedToken) as T;
-//   };
 
 // metodo nuovo che utilizza json classico
+// TODO: questo deve essere fatto meglio
+
 export const parseClaims = <T extends object>(
   token: string
 ): Nullable<T> => {
   return JSON.parse(token) as T;
+};
+
+export const parseJwt = <T extends object>(
+  token: string
+): Nullable<T> => {
+  
+  const tokenParts = parseClaims<{ access_token: string }>(token);
+  
+  if (!tokenParts || !tokenParts.access_token) {
+    return null;
+  }
+  
+  const jwt = jwtDecode(tokenParts.access_token);
+  
+  return jwt as T;
 };

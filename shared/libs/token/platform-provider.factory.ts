@@ -15,3 +15,5 @@ export const platformProviderFactory = <T>(browser: Type<T>, server: Type<T>): T
 
   return inject(platformType);
 }
+
+//TODO: Stessa roba che uso in lingua? In caso integrare e spostare da qui e mettere da altra parte

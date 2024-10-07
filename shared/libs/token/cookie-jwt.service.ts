@@ -1,8 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { Nullable } from '@ngserveio/utilities';
-import { parseClaims } from './token-claims.helper';
 import { IJwtClaimsService } from './jwt-service.iterface';
 import { REQUEST, RESPONSE } from './request.token';
+import { parseClaims, parseJwt } from './token-claims.helper';
+import { JwtPayload } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
@@ -38,5 +39,13 @@ export class CookieJwtService implements IJwtClaimsService {
     // const name_cookie = process.env['JWT_COOKIE_NAME'] as string;
     const name_cookie = 'AH_COOKIE';
     this.response?.cookie(name_cookie, token);
+  }
+
+  getJwt(): Nullable<JwtPayload> {
+    const token = this.getClaims<{ access_token: string }>();
+    if (!token) {
+      return null;
+    }
+    return parseJwt<JwtPayload>(token.access_token);
   }
 }

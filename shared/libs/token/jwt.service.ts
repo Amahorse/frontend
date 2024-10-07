@@ -7,3 +7,11 @@ export const jwtClaimsService = () => platformProviderFactory<IJwtClaimsService>
     SessionStorageJwtService,
     CookieJwtService
 );
+
+export enum Role {
+    guest,
+    user,
+    administrator,
+    superadministrator,
+}
+  
