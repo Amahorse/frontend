@@ -3,7 +3,9 @@ import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '@shared/libs/language/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { ProfileService } from '@elements/users/profile.service';
+import { profileService } from '@elements/users/profile.service';
+import { authService } from '@shared/libs/auth/auth.service';
+import { Router } from '@angular/router';
 
 import {
   AvatarComponent,
@@ -63,7 +65,7 @@ export class DefaultHeaderComponent extends HeaderComponent {
     return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
   });
 
-  constructor(profile$: ProfileService) {
+  constructor(profile$: profileService, private auth$: authService,  private router: Router) {
     super();
 
     //TODO: se questa da errore buttare fuori
@@ -78,6 +80,19 @@ export class DefaultHeaderComponent extends HeaderComponent {
   //TODO: da implementare quelli veri in base a lingua config e corrente
   public langIcon(lang: string) {
     return lang === 'en' ? 'Gb' : 'It';
+  }
+
+  public logout() {
+   
+    this.auth$.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: (error) => { 
+        alert(error.message);
+      }
+    });
+
   }
 
   public newMessages = [

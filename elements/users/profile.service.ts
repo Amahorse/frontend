@@ -5,7 +5,7 @@ import { Profile } from './profile.interface';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class profileService {
 
   constructor(private http: HttpClient) { }
 

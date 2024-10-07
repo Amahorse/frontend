@@ -6,7 +6,7 @@ import { CommonModule, NgStyle, JsonPipe } from '@angular/common';
 import { IconDirective } from '@coreui/icons-angular';
 import { FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
 import { ValidationFormsService } from '@shared/libs/forms/validation.service';
-import { Authenticator } from '@shared/libs/auth/auth.authenticator';
+import { authService } from '@shared/libs/auth/auth.service';
 import { LoadingComponent } from '@shared/ui/panel/src/lib/loading/loading.component';
 
 @Component({
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   formControls!: string[];
 
   constructor(
-    private authenticator: Authenticator,
+    private auth$: authService,
     private router: Router,
     private formBuilder: FormBuilder,
     public validationFormsService: ValidationFormsService
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
         password: this.simpleForm.value.password as string,
       };
      
-      this.authenticator.login(data).subscribe({
+      this.auth$.login(data).subscribe({
         next: () => {
           //TODO: se risposta non ha role di accesso deve apparire notifica che i dati sono corretti ma non ha autorizzazione
           this.router.navigate(['/dashboard']);

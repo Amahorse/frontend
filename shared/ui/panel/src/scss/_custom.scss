@@ -38,3 +38,7 @@
 .sidebar-brand {
   fill: #fff;
 }
+
+.dropdown-item:hover, .dropdown-item:focus {
+  cursor:  pointer !important;
+}

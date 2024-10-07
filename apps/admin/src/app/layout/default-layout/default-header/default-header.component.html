@@ -76,7 +76,7 @@
         </a>
       </li>
       <li>
-        <a cDropdownItem routerLink="">
+        <a cDropdownItem (click)="this.logout()">
           <svg cIcon class="me-1" name="cilAccountLogout"></svg>
           {{ 'menu.logout' | translate }}
         </a>
