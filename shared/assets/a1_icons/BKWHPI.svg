@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-4 {
+        fill: #f7c2d0;
+      }
+
+      .cls-5 {
+        fill: #d1d1d1;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-2" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+  </defs>
+  <path class="cls-5" d="M15,2.5c6.9,0,12.5,5.6,12.5,12.5s-5.6,12.5-12.5,12.5S2.5,21.9,2.5,15,8.1,2.5,15,2.5M15,1C7.28,1,1,7.28,1,15s6.28,14,14,14,14-6.28,14-14S22.72,1,15,1h0Z"/>
+  <g class="cls-1">
+    <g>
+      <path class="cls-3" d="M23.84.27L.27,23.84l-5.89-5.89L17.95-5.62,23.84.27Z"/>
+      <path class="cls-4" d="M35.62,12.05l-23.57,23.57-5.89-5.89L29.73,6.16l5.89,5.89Z"/>
+      <path class="cls-6" d="M29.73,6.16L6.16,29.73.27,23.84,23.84.27l5.89,5.89Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,6 @@
 .product-card {
-  max-height: 250px;
+  margin-bottom: 1rem;
+  border-radius: 0;
 }
 
 .product-card-container {
@@ -7,6 +8,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-block: 1rem;
 
   .product-card-title {
     text-align: left;
@@ -14,35 +16,17 @@
 }
 
 .product-card-body {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-  h5 {
-    text-align: center;
-  }
-
-  h6 {
-    font-size: 0.8rem;
-    color: #888888;
-    text-align: center;
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .product-card-button {
-    justify-self: flex-end;
-  }
+  border-top: 2px solid var(--cui-primary);
+  margin-inline: 0;
+  height: auto;
 }
 
 .product-card-image {
   width: 100px;
   height: 100px;
+}
+
+.product-card-image.body {
+  width: 200px;
+  height: 200px;
 }

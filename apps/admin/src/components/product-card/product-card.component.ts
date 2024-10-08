@@ -3,6 +3,8 @@ import { RouterLink } from '@angular/router';
 import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { Product } from '@elements/store/products.interface';
 import { TranslateModule } from '@ngx-translate/core';
+import { cilPlus } from '@coreui/icons'; // Importa l'icona
+import { IconSetService, IconModule } from '@coreui/icons-angular'; // Importa IconSetService e IconModule
 
 import {
   BorderDirective,
@@ -54,14 +56,18 @@ import {
     CollapseModule,
     RowComponent,
     ColComponent,
-    //collapseModule
     CollapseDirective,
+    IconModule, // Aggiungi IconModule qui
   ],
 })
 export class ProductCardComponent {
   @Input() product?: Product;
+  icons = { cilPlus }; // Definisci l'icona
 
-  constructor() {}
+  constructor(private iconSet: IconSetService) {
+    this.iconSet.icons = { cilPlus }; // Imposta l'icona nel servizio
+  }
+
   visible = [false, false];
 
   toggleCollapse(id: number): void {

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-5 {
+        fill: #ee9f0a;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+
+      .cls-7 {
+        fill: #d1d1d1;
+      }
+
+      .cls-8 {
+        fill: #c95f17;
+      }
+
+      .cls-9 {
+        fill: #3ea1bf;
+      }
+
+      .cls-10 {
+        fill: #500608;
+      }
+
+      .cls-2 {
+        stroke: #e77a0b;
+        stroke-width: .1px;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        stroke: #000;
+        stroke-width: .5px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-1" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+  </defs>
+  <circle cx="15" cy="15" r="12.5"/>
+  <g class="cls-4">
+    <polyline class="cls-2" points="4.54 11.25 8.29 15 4.54 18.75"/>
+    <polyline class="cls-2" points="25.46 18.75 21.71 15 25.46 11.25"/>
+    <g>
+      <polygon class="cls-10" points="8.29 15 3.5 10.26 10.26 10.26 10.26 3.49 15 8.29 19.74 3.49 19.74 10.26 26.47 10.26 21.71 15 26.47 19.75 19.74 19.75 19.74 26.42 15 21.71 10.26 26.42 10.26 19.75 3.5 19.75 8.29 15"/>
+      <polygon class="cls-8" points="9.39 15 5.39 11.03 11.04 11.03 11.04 5.38 15 9.39 18.96 5.38 18.96 11.03 24.57 11.03 20.6 15 24.57 18.96 18.96 18.96 18.96 24.53 15 20.6 11.04 24.53 11.04 18.96 5.39 18.96 9.39 15"/>
+      <polygon class="cls-5" points="10.85 14.98 7.89 12.05 12.06 12.05 12.06 7.87 14.99 10.84 17.92 7.87 17.92 12.05 22.08 12.05 19.14 14.98 22.08 17.91 17.92 17.91 17.92 22.03 14.99 19.13 12.06 22.03 12.06 17.91 7.89 17.91 10.85 14.98"/>
+      <polygon class="cls-6" points="12.22 14.97 10.24 13.01 13.03 13.01 13.03 10.22 14.99 12.2 16.95 10.22 16.95 13.01 19.73 13.01 17.76 14.97 19.73 16.93 16.95 16.93 16.95 19.69 14.99 17.75 13.03 19.69 13.03 16.93 10.24 16.93 12.22 14.97"/>
+      <g>
+        <line class="cls-3" x1="13.62" y1="15" x2="16.38" y2="15"/>
+        <line class="cls-3" x1="15" y1="16.39" x2="15" y2="13.62"/>
+      </g>
+    </g>
+    <g>
+      <rect class="cls-8" x="-11.15" y="6.97" width="16.07" height="16.07" transform="translate(-11.52 2.19) rotate(-45)"/>
+      <rect class="cls-10" x="-9.03" y="9.09" width="11.82" height="11.82" transform="translate(-11.52 2.19) rotate(-45)"/>
+      <rect class="cls-5" x="-5.77" y="12.35" width="5.3" height="5.3" transform="translate(-11.52 2.19) rotate(-45)"/>
+      <rect x="1.89" y="12.35" width="5.3" height="5.3" transform="translate(-9.28 7.61) rotate(-45)"/>
+      <rect class="cls-9" x="2.6" y="13.06" width="3.88" height="3.88" transform="translate(-9.28 7.61) rotate(-45)"/>
+      <rect class="cls-6" x="3.51" y="13.97" width="2.07" height="2.07" transform="translate(-9.28 7.61) rotate(-45)"/>
+      <rect x="4.12" y="14.58" width=".85" height=".85" transform="translate(-9.28 7.61) rotate(-45)"/>
+    </g>
+    <g>
+      <rect class="cls-8" x="25.05" y="6.97" width="16.07" height="16.07" transform="translate(-.92 27.79) rotate(-45)"/>
+      <rect class="cls-10" x="27.18" y="9.09" width="11.82" height="11.82" transform="translate(-.92 27.79) rotate(-45)"/>
+      <rect class="cls-5" x="30.44" y="12.35" width="5.3" height="5.3" transform="translate(-.92 27.79) rotate(-45)"/>
+      <rect x="22.81" y="12.35" width="5.3" height="5.3" transform="translate(-3.15 22.4) rotate(-45)"/>
+      <rect class="cls-9" x="23.52" y="13.06" width="3.88" height="3.88" transform="translate(-3.15 22.4) rotate(-45)"/>
+      <rect class="cls-6" x="24.42" y="13.97" width="2.07" height="2.07" transform="translate(-3.15 22.4) rotate(-45)"/>
+      <rect x="25.03" y="14.58" width=".85" height=".85" transform="translate(-3.15 22.4) rotate(-45)"/>
+    </g>
+  </g>
+  <path class="cls-7" d="m15,2.5c6.9,0,12.5,5.6,12.5,12.5s-5.6,12.5-12.5,12.5S2.5,21.9,2.5,15,8.1,2.5,15,2.5m0-1.5C7.28,1,1,7.28,1,15s6.28,14,14,14,14-6.28,14-14S22.72,1,15,1h0Z"/>
+</svg>

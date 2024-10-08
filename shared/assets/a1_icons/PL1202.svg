@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #d2af9c;
+        stroke-width: .13px;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-8 {
+        fill: #6eb8c9;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-10, .cls-6, .cls-7 {
+        fill: none;
+      }
+
+      .cls-10, .cls-11, .cls-8, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-17, .cls-15 {
+        fill: #e4845b;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: .13px;
+      }
+
+      .cls-2, .cls-6 {
+        stroke: #7a4419;
+      }
+
+      .cls-3, .cls-5 {
+        stroke: #6eb8c9;
+      }
+
+      .cls-3, .cls-12 {
+        fill: #d2af9c;
+      }
+
+      .cls-4, .cls-5, .cls-11 {
+        fill: #7a4419;
+      }
+
+      .cls-4, .cls-7 {
+        stroke: #e4845b;
+      }
+
+      .cls-18 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-19 {
+        clip-path: url(#clippath-4);
+      }
+
+      .cls-20 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-21 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-22 {
+        clip-path: url(#clippath-7);
+      }
+
+      .cls-23 {
+        clip-path: url(#clippath-6);
+      }
+
+      .cls-24 {
+        clip-path: url(#clippath-5);
+      }
+
+      .cls-6 {
+        stroke-width: .35px;
+      }
+
+      .cls-7 {
+        stroke-width: .11px;
+      }
+
+      .cls-13 {
+        fill: #d1d1d1;
+      }
+
+      .cls-14 {
+        fill: #ddcbc1;
+      }
+
+      .cls-16 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-2">
+      <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-4">
+      <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-5">
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-6">
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+    <clipPath id="clippath-7">
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </clipPath>
+  </defs>
+  <g class="cls-9">
+    <g>
+      <circle class="cls-17" cx="15" cy="15" r="12.5"/>
+      <g class="cls-18">
+        <g>
+          <circle class="cls-17" cx="15" cy="15" r="12.5"/>
+          <g class="cls-21">
+            <g>
+              <circle class="cls-17" cx="15" cy="15" r="12.5"/>
+              <g class="cls-20">
+                <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+              </g>
+            </g>
+            <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+          </g>
+        </g>
+        <g>
+          <circle class="cls-17" cx="15" cy="15" r="12.5"/>
+          <g class="cls-19">
+            <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+          </g>
+        </g>
+        <circle class="cls-15" cx="15" cy="15" r="12.5"/>
+      </g>
+    </g>
+    <rect class="cls-11" x="1" y="2.5" width="8.01" height="25"/>
+    <rect class="cls-8" x="5.71" y="2.5" width="1.35" height="25"/>
+    <rect class="cls-16" x="5.37" y="2.5" width=".34" height="25"/>
+    <g>
+      <polygon class="cls-11" points="10.63 5.85 10.63 9.15 11.82 7.5 10.63 5.85"/>
+      <polygon class="cls-11" points="10.63 13.35 10.63 16.65 11.82 15 10.63 13.35"/>
+      <polygon class="cls-11" points="10.63 20.85 10.63 24.15 11.82 22.5 10.63 20.85"/>
+    </g>
+    <g>
+      <polygon class="cls-5" points="17.58 5.57 24 11.35 17.58 17.17 11.17 11.35 17.58 5.57"/>
+      <polygon class="cls-3" points="17.58 6.94 22.49 11.36 17.58 15.8 12.69 11.36 17.58 6.94"/>
+      <polygon class="cls-6" points="17.58 7.78 21.56 11.36 17.58 14.96 13.62 11.36 17.58 7.78"/>
+      <polygon class="cls-4" points="17.58 8.84 20.39 11.36 17.58 13.9 14.79 11.36 17.58 8.84"/>
+      <polygon class="cls-12" points="17.59 9.08 20.12 11.36 17.59 13.66 15.06 11.36 17.59 9.08"/>
+      <polygon class="cls-11" points="17.59 9.22 19.96 11.36 17.59 13.52 15.21 11.36 17.59 9.22"/>
+      <polygon class="cls-1" points="17.59 9.48 19.68 11.36 17.59 13.26 15.5 11.36 17.59 9.48"/>
+      <polygon class="cls-2" points="17.59 10.43 18.63 11.37 17.59 12.32 16.54 11.37 17.59 10.43"/>
+      <polygon class="cls-12" points="17.59 10.68 18.35 11.37 17.59 12.06 16.82 11.37 17.59 10.68"/>
+      <polygon class="cls-8" points="17.59 10.96 18.05 11.37 17.59 11.79 17.13 11.37 17.59 10.96"/>
+      <polygon class="cls-7" points="17.58 7.78 21.56 11.36 17.58 14.96 13.62 11.36 17.58 7.78"/>
+    </g>
+    <polygon class="cls-11" points="10.63 11.33 13.03 14.68 15.44 11.33 13.04 7.86 10.63 11.33"/>
+    <polygon class="cls-14" points="11.18 11.32 13.03 13.9 14.89 11.32 13.04 8.63 11.18 11.32"/>
+    <polygon class="cls-8" points="11.58 11.31 13.03 13.33 14.49 11.31 13.04 9.21 11.58 11.31"/>
+    <polygon class="cls-12" points="12.15 11.29 13.04 12.53 13.92 11.29 13.04 10.01 12.15 11.29"/>
+    <polygon class="cls-11" points="14.89 9.62 16.71 11.26 14.89 12.92 13.07 11.26 14.89 9.62"/>
+    <polygon class="cls-8" points="14.89 10.01 16.28 11.26 14.89 12.53 13.5 11.26 14.89 10.01"/>
+    <polygon class="cls-14" points="14.89 10.44 15.81 11.27 14.89 12.1 13.97 11.27 14.89 10.44"/>
+    <polygon class="cls-12" points="14.89 10.76 15.45 11.27 14.89 11.78 14.33 11.27 14.89 10.76"/>
+    <g>
+      <polygon class="cls-5" points="17.58 13.29 24 19.08 17.58 24.9 11.17 19.08 17.58 13.29"/>
+      <polygon class="cls-3" points="17.58 14.66 22.49 19.08 17.58 23.53 12.69 19.08 17.58 14.66"/>
+      <polygon class="cls-6" points="17.58 15.5 21.56 19.08 17.58 22.69 13.62 19.08 17.58 15.5"/>
+      <polygon class="cls-4" points="17.58 16.56 20.39 19.09 17.58 21.63 14.79 19.09 17.58 16.56"/>
+      <polygon class="cls-12" points="17.59 16.81 20.12 19.09 17.59 21.38 15.06 19.09 17.59 16.81"/>
+      <polygon class="cls-11" points="17.59 16.95 19.96 19.09 17.59 21.24 15.21 19.09 17.59 16.95"/>
+      <polygon class="cls-1" points="17.59 17.21 19.68 19.09 17.59 20.98 15.5 19.09 17.59 17.21"/>
+      <polygon class="cls-2" points="17.59 18.15 18.63 19.09 17.59 20.04 16.54 19.09 17.59 18.15"/>
+      <polygon class="cls-12" points="17.59 18.4 18.35 19.09 17.59 19.79 16.82 19.09 17.59 18.4"/>
+      <polygon class="cls-8" points="17.59 18.68 18.05 19.09 17.59 19.51 17.13 19.09 17.59 18.68"/>
+      <polygon class="cls-7" points="17.58 15.5 21.56 19.08 17.58 22.69 13.62 19.08 17.58 15.5"/>
+    </g>
+    <polygon class="cls-11" points="10.63 19.16 13.03 22.5 15.44 19.16 13.04 15.69 10.63 19.16"/>
+    <polygon class="cls-14" points="11.17 19.14 13.03 21.73 14.89 19.14 13.04 16.46 11.17 19.14"/>
+    <polygon class="cls-8" points="11.58 19.13 13.03 21.16 14.49 19.13 13.04 17.03 11.58 19.13"/>
+    <polygon class="cls-12" points="12.14 19.12 13.03 20.35 13.92 19.12 13.04 17.84 12.14 19.12"/>
+    <polygon class="cls-11" points="14.85 17.45 16.68 19.09 14.85 20.74 13.03 19.09 14.85 17.45"/>
+    <polygon class="cls-8" points="14.85 17.84 16.25 19.09 14.85 20.35 13.46 19.09 14.85 17.84"/>
+    <polygon class="cls-14" points="14.85 18.27 15.77 19.09 14.85 19.92 13.94 19.09 14.85 18.27"/>
+    <polygon class="cls-12" points="14.85 18.59 15.41 19.09 14.85 19.6 14.29 19.09 14.85 18.59"/>
+    <polygon class="cls-11" points="20.39 9.72 22.21 11.37 20.39 13.02 18.57 11.37 20.39 9.72"/>
+    <polygon class="cls-8" points="20.39 10.11 21.78 11.37 20.39 12.63 19 11.37 20.39 10.11"/>
+    <polygon class="cls-14" points="20.39 10.54 21.31 11.37 20.39 12.2 19.47 11.37 20.39 10.54"/>
+    <polygon class="cls-12" points="20.39 10.86 20.95 11.37 20.39 11.88 19.83 11.37 20.39 10.86"/>
+    <polygon class="cls-11" points="20.39 17.45 22.21 19.09 20.39 20.74 18.57 19.09 20.39 17.45"/>
+    <polygon class="cls-8" points="20.39 17.84 21.78 19.09 20.39 20.35 19 19.09 20.39 17.84"/>
+    <polygon class="cls-14" points="20.39 18.27 21.31 19.09 20.39 19.92 19.47 19.09 20.39 18.27"/>
+    <polygon class="cls-12" points="20.39 18.59 20.95 19.09 20.39 19.6 19.83 19.09 20.39 18.59"/>
+    <polygon class="cls-11" points="17.58 12.24 20.9 15.22 17.58 18.23 14.28 15.22 17.58 12.24"/>
+    <polygon class="cls-14" points="17.59 13.02 20.03 15.23 17.59 17.44 15.15 15.23 17.59 13.02"/>
+    <polygon class="cls-11" points="17.59 13.57 19.43 15.23 17.59 16.9 15.75 15.23 17.59 13.57"/>
+    <polygon class="cls-12" points="17.59 14.17 18.76 15.23 17.59 16.29 16.42 15.23 17.59 14.17"/>
+    <polygon class="cls-11" points="17.58 19.96 20.9 22.95 17.58 25.95 14.28 22.95 17.58 19.96"/>
+    <polygon class="cls-14" points="17.59 20.75 20.03 22.95 17.59 25.17 15.15 22.95 17.59 20.75"/>
+    <polygon class="cls-11" points="17.59 21.29 19.43 22.95 17.59 24.62 15.75 22.95 17.59 21.29"/>
+    <polygon class="cls-12" points="17.59 21.9 18.76 22.95 17.59 24.02 16.42 22.95 17.59 21.9"/>
+    <g>
+      <polygon class="cls-11" points="17.58 4.44 20.9 7.42 17.58 10.42 14.28 7.42 17.58 4.44"/>
+      <polygon class="cls-14" points="17.59 5.22 20.03 7.42 17.59 9.64 15.15 7.42 17.59 5.22"/>
+      <polygon class="cls-11" points="17.59 5.77 19.43 7.42 17.59 9.09 15.75 7.42 17.59 5.77"/>
+      <polygon class="cls-12" points="17.59 6.37 18.76 7.43 17.59 8.49 16.42 7.43 17.59 6.37"/>
+    </g>
+    <g class="cls-24">
+      <g class="cls-23">
+        <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+      </g>
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </g>
+    <g class="cls-22">
+      <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+    </g>
+    <circle class="cls-10" cx="15" cy="15" r="12.5"/>
+  </g>
+  <path class="cls-13" d="M15,2.5c6.9,0,12.5,5.6,12.5,12.5s-5.6,12.5-12.5,12.5S2.5,21.9,2.5,15,8.1,2.5,15,2.5M15,1C7.28,1,1,7.28,1,15s6.28,14,14,14,14-6.28,14-14S22.72,1,15,1h0Z"/>
+</svg>
