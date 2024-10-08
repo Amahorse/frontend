@@ -1,7 +1,14 @@
 <c-container>
-  <c-row class="product-card-container">
-    <c-col xs="12" md="4" *ngFor="let product of this.products">
-      <app-product-card [product]="product"></app-product-card>
-    </c-col>
+  <c-row class="product-card-header">
+    <c-col xs="2">Codice</c-col>
+    <c-col xs="2"></c-col>
+    <c-col class="header-description" xs="4">Descrizione</c-col>
+    <c-col xs="1">Prezzo</c-col>
+    <c-col xs="1">Disponibilità</c-col>
+    <c-col xs="2"></c-col>
   </c-row>
+  <app-product-card
+    *ngFor="let product of this.products"
+    [product]="product"
+  ></app-product-card>
 </c-container>

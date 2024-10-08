@@ -1,11 +1,21 @@
 .product-card {
   max-height: 250px;
-  overflow-y: scroll;
+}
+
+.product-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .product-card-title {
+    text-align: left;
+  }
 }
 
 .product-card-body {
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   justify-content: center;
   h5 {
@@ -22,7 +32,17 @@
     justify-content: center;
   }
 
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
   .product-card-button {
     justify-self: flex-end;
   }
+}
+
+.product-card-image {
+  width: 100px;
+  height: 100px;
 }

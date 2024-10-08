@@ -20,6 +20,10 @@ import {
   ListGroupDirective,
   ListGroupItemDirective,
   TextColorDirective,
+  CollapseModule,
+  ColComponent,
+  RowComponent,
+  CollapseDirective,
 } from '@coreui/angular-pro';
 
 @Component({
@@ -47,10 +51,20 @@ import {
     GutterDirective,
     CardImgDirective,
     TranslateModule,
+    CollapseModule,
+    RowComponent,
+    ColComponent,
+    //collapseModule
+    CollapseDirective,
   ],
 })
 export class ProductCardComponent {
   @Input() product?: Product;
 
   constructor() {}
+  visible = [false, false];
+
+  toggleCollapse(id: number): void {
+    this.visible[id] = !this.visible[id];
+  }
 }

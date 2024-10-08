@@ -1,12 +1,12 @@
 // Here you can add other styles
 
 // custom .chartjs-tooltip-body-item padding
-@import "charts";
+@import 'charts';
 
 // custom tweaks for scrollbar styling (wip)
-@import "scrollbar";
+@import 'scrollbar';
 
- // custom calendar today cell color
+// custom calendar today cell color
 .calendar-cell.today {
   --cui-calendar-cell-today-color: var(--cui-info) !important;
 }
@@ -16,10 +16,15 @@
   cursor: pointer;
 }
 
-//Larghezza container default 
+//Larghezza container default
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
-      max-width: 1540px;
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: 1540px;
   }
 }
 
@@ -28,7 +33,6 @@
   justify-content: space-between;
   padding: var(--cui-sidebar-padding-y) var(--cui-sidebar-padding-x);
   flex-direction: row-reverse;
-
 }
 
 .sidebar-header .btn-close {
@@ -37,4 +41,19 @@
 
 .sidebar-brand {
   fill: #fff;
+}
+
+.product-card-header {
+  background-color: var(--cui-primary);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cui-white);
+  margin-inline: 0;
+  text-align: center;
+
+  .header-description {
+    text-align: left;
+  }
 }

@@ -1,35 +1,48 @@
 <c-card class="product-card">
-  <c-card-body class="product-card-body">
-    <h5 cCardTitle>{{ product?.code }}</h5>
-
-    <img
-      *ngIf="product?.neutral_image_url !== null"
-      [cCardImg]="'top'"
-      [src]="product?.neutral_image_url"
-      [alt]="product?.title"
-    />
-
-    <h6 cCardTitle>{{ product?.title }}</h6>
-    <h8 cCardTitle>{{ product?.brand_code }}</h8>
-    <h8 cCardTitle>{{ 'products.family.' + product?.family | translate }}</h8>
-    <ul>
-      <li *ngFor="let cat of product?.categories">
-        {{ cat.category }}
-      </li>
-    </ul>
-    <div *ngFor="let variant of product?.variants">
-      <span *ngIf="variant?.a0_code !== null"
-        >{{ variant?.a0_code }} {{ variant?.a0_description }}
-        {{ variant?.availability }}
-      </span>
-      <span *ngIf="variant?.a1_code !== null"
-        >{{ variant?.a1_code }} {{ variant?.a1_description }}
-        {{ variant?.availability }}</span
+  <c-row class="product-card-container">
+    <c-col xs="2">
+      <span>{{ product?.code }}</span>
+    </c-col>
+    <c-col xs="2">
+      <img
+        class="product-card-image"
+        *ngIf="product?.neutral_image_url !== null"
+        [cCardImg]="'top'"
+        [src]="product?.neutral_image_url"
+        [alt]="product?.title"
+      />
+    </c-col>
+    <c-col class="product-card-title" xs="4">
+      <span>{{ product?.title }}</span>
+    </c-col>
+    <c-col xs="1">
+      <span>price</span>
+    </c-col>
+    <c-col xs="1">
+      <span>availability</span>
+    </c-col>
+    <c-col xs="2">
+      <button
+        (click)="toggleCollapse(product?.id)"
+        cButton
+        class="me-1"
+        color="primary"
       >
-      <span *ngIf="variant?.a4_code !== null"
-        >{{ variant?.a4_code }} {{ variant?.a4_description }}
-        {{ variant?.availability }}</span
-      >
-    </div>
-  </c-card-body>
+        Toggle first element
+      </button>
+    </c-col>
+  </c-row>
+  <c-row [visible]="visible[product?.id]" cCollapse>
+    <c-col [xs]="12">
+      <div>
+        <c-card class="mt-3">
+          <c-card-body>
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+            labore wes anderson cred nesciunt sapiente ea proident.
+          </c-card-body>
+        </c-card>
+      </div>
+    </c-col>
+  </c-row>
 </c-card>
