@@ -5,6 +5,7 @@ import {BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class LoadingService {
+
   loadingSub: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   /**
    * Contains in-progress loading requests
@@ -26,7 +27,7 @@ export class LoadingService {
     if (!url) {
       throw new Error('The request URL must be provided to the LoadingService.setLoading function');
     }
-    console.log(this.loadingMap);
+
     if (loading === true) {
       this.loadingMap.set(url, loading);
       this.loadingSub.next(true);

@@ -1,7 +1,6 @@
 import { Injectable, NgModule } from '@angular/core';
  import { TranslateService, TranslateModule } from '@ngx-translate/core';
  import { LanguageFactory } from './language.factory';
-
  @Injectable({
    providedIn: 'root'
  })

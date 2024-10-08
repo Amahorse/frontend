@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToastModule } from '@coreui/angular-pro';
+import { ToastModule, ButtonCloseDirective, ToasterPlacement, ToastComponent } from '@coreui/angular-pro';
+
 
 @Component({
   selector: 'app-alerts',
   standalone: true,
-  imports: [CommonModule, ToastModule],
+  imports: [CommonModule, ToastModule, ButtonCloseDirective],
+  providers: [{ provide: ToastComponent, useExisting: forwardRef(() => AlertsComponent) }],
   templateUrl: './alerts.component.html',
   styleUrl: './alerts.component.scss',
 })
 export class AlertsComponent {
 
-  message = 'This is an alert';
+  message = '';
 
-  type = 'error';
+  type = 'danger';
 
   visible = true;
 
   dismissible = true;
 
-}
+  placement = ToasterPlacement.BottomCenter;
 
-//https://coreui.io/angular/docs/components/toast/
+}

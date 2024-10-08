@@ -7,13 +7,14 @@ import { IconDirective } from '@coreui/icons-angular';
 import { FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
 import { ValidationFormsService } from '@shared/libs/forms/validation.service';
 import { authService } from '@shared/libs/auth/auth.service';
-import { AlertsComponent, LoadingComponent } from '@workspace/panel/components';
+import { LoadingComponent } from '@workspace/panel/components';
+import { AlertsService } from '@shared/ui/panel/src/services/alerts.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [ValidationFormsService],
+  providers: [ValidationFormsService, AlertsService],
   standalone: true,
   imports: [CommonModule, FormDirective, FormLabelDirective, FormControlDirective, FormFeedbackComponent, InputGroupComponent, InputGroupTextDirective, ReactiveFormsModule, FormsModule, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective, NgStyle, TranslateModule, LoadingComponent]
 })
@@ -29,13 +30,18 @@ export class LoginComponent implements OnInit {
     private auth$: authService,
     private router: Router,
     private formBuilder: FormBuilder,
-    public validationFormsService: ValidationFormsService
+    public validationFormsService: ValidationFormsService,
+    public alertsService: AlertsService
   ) {
     this.formErrors = this.validationFormsService.errorMessages;
     this.createForm();
+
+
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+   }
 
   onSubmit() {
    
@@ -50,10 +56,6 @@ export class LoginComponent implements OnInit {
         next: () => {
           //TODO: se risposta non ha role di accesso deve apparire notifica che i dati sono corretti ma non ha autorizzazione
           this.router.navigate(['/dashboard']);
-        },
-        error: (error) => {
-          //TODO: gestire errori con notifiche in base al codice errore
-          alert(error.message);
         }
       });
 
