@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ButtonModule, FormModule, GridModule } from '@coreui/angular-pro';
+import { ButtonModule, CardModule, FormModule, GridModule } from '@coreui/angular-pro';
+import { LoginComponent } from './login.component';
 import { IconModule } from '@coreui/icons-angular';
 import { IconSetService } from '@coreui/icons-angular';
-import { iconSubset } from '@shared/ui/panel/src/lib/icons/icon-subset';
-import { Page500Component } from './page500.component';
+import { iconSubset } from '@shared/ui/panel/src/components/icons/icon-subset';
 
-describe('Page500Component', () => {
-  let component: Page500Component;
-  let fixture: ComponentFixture<Page500Component>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
   let iconSetService: IconSetService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    imports: [GridModule, ButtonModule, FormModule, IconModule, Page500Component],
+    imports: [FormModule, CardModule, GridModule, ButtonModule, IconModule, LoginComponent],
     providers: [IconSetService]
 })
     .compileComponents();
@@ -23,7 +23,7 @@ describe('Page500Component', () => {
     iconSetService = TestBed.inject(IconSetService);
     iconSetService.icons = { ...iconSubset };
 
-    fixture = TestBed.createComponent(Page500Component);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

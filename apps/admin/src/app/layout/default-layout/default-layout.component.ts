@@ -16,7 +16,7 @@ import {
   SidebarTogglerDirective
 } from '@coreui/angular-pro';
 
-import { LoadingComponent } from '@shared/ui/panel/src/lib/loading/loading.component';
+import { LoadingComponent } from '@workspace/panel/components';
 import { DefaultAsideComponent, DefaultFooterComponent, DefaultHeaderComponent, DefaultBreadcrumbComponent } from './';
 import { navItems } from './_nav';
 

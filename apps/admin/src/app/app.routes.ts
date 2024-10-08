@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { DefaultLayoutComponent } from './layout';
-import { LoginComponent, Page500Component, Page404Component } from '@shared/ui/panel/src/index';
+import { LoginComponent, Page500Component, Page404Component } from '@workspace/panel/views';
 import { hasRoleGuard } from '@shared/libs/auth/auth.has-role-guard';
 import { AppOfflineComponent } from '@shared/ui/app-offline/src/lib/app-offline/app-offline.component';
 

@@ -21,7 +21,8 @@
       "@workspace/api-docs": ["shared/ui/api-docs/src/index.ts"],
       "@workspace/app-offline": ["shared/ui/app-offline/src/index.ts"],
       "@workspace/config": ["services/src/index.ts"],
-      "@workspace/panel": ["shared/ui/panel/src/index.ts"]
+      "@workspace/panel/views": ["shared/ui/panel/src/views/index.ts"],
+      "@workspace/panel/components": ["shared/ui/panel/src/components/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

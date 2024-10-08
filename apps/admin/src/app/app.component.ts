@@ -5,7 +5,7 @@ import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/ro
 import { delay, filter, map, tap } from 'rxjs/operators';
 import { ColorModeService } from '@coreui/angular-pro';
 import { IconSetService } from '@coreui/icons-angular';
-import { iconSubset } from '@shared/ui/panel/src/lib/icons/icon-subset';
+import { iconSubset } from '@workspace/panel/components';
 import { TranslateModule } from '@ngx-translate/core';  
 @Component({
   selector: 'app-root',
