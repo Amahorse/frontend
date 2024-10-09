@@ -3,6 +3,9 @@ import { Component, computed, inject, input } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '@shared/libs/language/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { profileService } from '@elements/users/profile.service';
+import { AuthService } from '@shared/libs/auth/auth.service';
+import { Router } from '@angular/router';
 
 import {
   AvatarComponent,
@@ -43,6 +46,8 @@ import { IconDirective } from '@coreui/icons-angular';
 })
 export class DefaultHeaderComponent extends HeaderComponent {
 
+  profile: any;
+
   readonly #colorModeService = inject(ColorModeService);
   readonly colorMode = this.#colorModeService.colorMode;
 
@@ -60,14 +65,34 @@ export class DefaultHeaderComponent extends HeaderComponent {
     return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
   });
 
-  constructor() {
+  constructor(profile$: profileService, private auth$: AuthService,  private router: Router) {
     super();
+
+    //TODO: se questa da errore buttare fuori
+    profile$.get().subscribe(profile => {
+      this.profile = profile;
+    });
+
   }
 
   sidebarId = input('sidebar1');
 
+  //TODO: da implementare quelli veri in base a lingua config e corrente
   public langIcon(lang: string) {
     return lang === 'en' ? 'Gb' : 'It';
+  }
+
+  public logout() {
+   
+    this.auth$.logout().subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: (error) => { 
+        alert(error.message);
+      }
+    });
+
   }
 
   public newMessages = [

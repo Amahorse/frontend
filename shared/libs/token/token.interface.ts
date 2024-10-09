@@ -5,4 +5,5 @@ export interface Token{
     expires_in: number
     refresh_token: string
     scope: string
+    role: string
 }

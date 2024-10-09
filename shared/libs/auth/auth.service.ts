@@ -1,40 +1,86 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { tokenService } from '../token/token.service';
 import { Token } from '../token/token.interface';
-import { catchError, first, throwError } from 'rxjs';
-import type {Config} from 'jest';
-//TODO: import type non dovrebbe servire, mettere a posto caricamento jest da config https://dev.to/lbenie/how-to-add-types-with-jest-and-typescript-1bai
-export const authUrl = '/oauth/token?client_id='; // + process.env['API_CLIENT_ID'];
+import { catchError, first, lastValueFrom, Observable, throwError } from 'rxjs';
+import { jwtClaimsService } from '../token/jwt.service';
+import { Nullable } from '@ngserveio/utilities';
+import { map } from 'rxjs/operators';
+
+// ----------------
+// TODO
+// trovare il modo di integrare gli env
+// ----------------
+// export const authUrl = process.env['API_URL'] + '/oauth/token?client_id=' + process.env['API_CLIENT_ID'];
+export const authUrl = "http://api.amahorse.localhost" + '/oauth/token?client_id=' + 'xETZNsNHBMiDqLTV.45c19b29012947fa5c8f44c755fe901e.1698312544Z6SY';
 
 @Injectable(
-  {providedIn: 'root'}
+  { providedIn: 'root' }
 )
-export class authService {
-  /*
-    constructor(private http: HttpClient, public tokenService: tokenService) {}
+export class AuthService {
 
-    async get(): Promise<Token> {
-  
-      //Se c'è token in locale ritorna quello
-      if(this.tokenService.get() !== null) { 
-        return this.tokenService.token;
-      }
-      console.log('chiamata token');
-      //Atrimenti fa chiamata sincrona per reperirlo e settarlo
-      this.http.get<Token>(authUrl).pipe(first(),
- 
-          catchError((error: HttpErrorResponse)=>{
-            //TODO: qualsiasi errore dia questa chiamata deve mandare a una pagine html statica per dire che la app è offline
-            //TODO: sto throw error è deprecato
-            return throwError(error)
-          })
-        ).subscribe((data: Token) => {
-          this.tokenService.set(data);
-      })
+  constructor(private http: HttpClient) { }
 
-      return this.tokenService.token;
+  jwtServ = jwtClaimsService();
+
+  async get(): Promise<Nullable<Token>> {
+
+    const claims = this.jwtServ.getClaims<Token>();
+    if (!claims) {
+
+      const getToken$ = this.http.get<Token>(authUrl);
+      await lastValueFrom(getToken$).then(data => {
+        var token_str = JSON.stringify(data);
+        this.jwtServ.setToken(token_str);
+        return data;
+      }).catch(error => {
+        //TODO: rimandare a pagina statica di errore
+        console.error('Errore durante il caricamento del token:', error);
+        return throwError(() => error);
+      });
+    } else {
+      return claims;
     }
-*/
+    return claims;
+  }
+
+  login(data: { email: string, password: string }): Observable<boolean> {
+
+    const body = {
+      "client_id": `xETZNsNHBMiDqLTV.45c19b29012947fa5c8f44c755fe901e.1698312544Z6SY`,
+      "email": data.email,
+      "password": data.password,
+    };
+
+    return this.http.post<Token>(`/oauth/login`, body).pipe(
+
+      map((token: Token) => {
+        const token_str = JSON.stringify(token);
+        this.jwtServ.setToken(token_str);
+        return true;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(() => error);
+      })
+    );
+  }
+
+  logout(): Observable<boolean> {
   
+    return this.http.post<Token>(`/oauth/logout`,[]).pipe(
+      
+      map((token: Token) => {
+      
+        const token_str = JSON.stringify(token);
+        this.jwtServ.setToken(token_str);
+        return true;
+      }),
+      catchError((error: HttpErrorResponse) => {
+        return throwError(() => error);
+      })
+    );
+
+  }
+
+
+
 }

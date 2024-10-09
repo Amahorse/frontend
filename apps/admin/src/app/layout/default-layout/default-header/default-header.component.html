@@ -60,6 +60,7 @@
   <c-dropdown [popperOptions]="{ placement: 'bottom-start' }" variant="nav-item">
     <button [caret]="false" cDropdownToggle class="py-0" aria-label="Open user menu">
       <svg cIcon name="cilUser" size="lg"></svg>
+      {{ this.profile?.business_name }}
     </button>
     <ul cDropdownMenu class="pt-0 w-auto">
       <li>
@@ -75,7 +76,7 @@
         </a>
       </li>
       <li>
-        <a cDropdownItem routerLink="">
+        <a cDropdownItem (click)="this.logout()">
           <svg cIcon class="me-1" name="cilAccountLogout"></svg>
           {{ 'menu.logout' | translate }}
         </a>

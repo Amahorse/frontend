@@ -1,14 +1,19 @@
 // Variable overrides
 //
 // If you want to customize your project please add your variables below.
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+//TODO: chiarire dubbio Roboto o Montserrat
+body {
+  //font-family: 'Montserrat', sans-serif !important;
+}
 
 $enable-deprecation-messages: false !default;
 
 $primary: #9F3223 !default;
 $success: #51cc8a !default;
-$danger: #ef376e !default;
+$danger: #d11818!default;
 $warning: #fc0 !default;
-$info: #747af2 !default;
+$info: #4148d1 !default;
 
 $primary-text-emphasis: shade-color($primary, 60%) !default;
 $success-text-emphasis: shade-color($success, 60%) !default;

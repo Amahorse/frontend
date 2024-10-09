@@ -1,0 +1,52 @@
+//TODO BU: Ricontrollare e differenziare i campi
+
+export interface Profile {
+    id: number
+    id_agents: any
+    id_resellers: any
+    id_tracking: any
+    username: string
+    email: string
+    hash: string
+    auth: number
+    type: string
+    language: string
+    first_name: string
+    last_name: string
+    business_name: string
+    business_type: string
+    header: string
+    sdi_code: string
+    fiscal_code: any
+    vat_number: string
+    pec: string
+    pa: number
+    description: any
+    image: string
+    birth: any
+    gender: any
+    id_countries: number
+    id_countries_states: number
+    address: string
+    city: string
+    zip_code: string
+    phone: string
+    phone_prefix: string
+    url_website: string
+    url_twitter: any
+    url_facebook: string
+    url_linkedin: any
+    url_instagram: any
+    facebook_id: any
+    facebook_token: any
+    google_id: any
+    google_token: any
+    security_block: any
+    date_ins: string
+    date_update: string
+    country: string
+    country_short: string
+    state: string
+    state_short: string
+    scope: string
+  }
