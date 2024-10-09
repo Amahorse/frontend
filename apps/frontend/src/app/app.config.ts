@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { TranslationService } from '@shared/libs/language/translation.service';
-import { configService } from '@shared/libs/config/config.service';
+import { ConfigService } from '@shared/libs/config/config.service';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AuthInterceptor } from '@shared/libs/auth/auth.interceptor'
 
@@ -13,6 +13,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(appRoutes),
     provideHttpClient(withInterceptors([AuthInterceptor])),
-    importProvidersFrom(TranslationService, configService)
+    importProvidersFrom(TranslationService, ConfigService)
   ],
 };

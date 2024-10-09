@@ -1,6 +1,6 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { configService } from '@shared/libs/config/config.service';
+import { ConfigService } from '@shared/libs/config/config.service';
 import {
   provideRouter,
   withEnabledBlockingInitialNavigation,
@@ -30,7 +30,7 @@ export const appConfig: ApplicationConfig = {
       withEnabledBlockingInitialNavigation(),
       withViewTransitions()
     ),
-    importProvidersFrom(SidebarModule, DropdownModule, TranslationService, configService),
+    importProvidersFrom(SidebarModule, DropdownModule, TranslationService, ConfigService),
     IconSetService,
     provideAnimations(),
     provideHttpClient( withInterceptors([ AuthInterceptor, LoadingInterceptor]) )

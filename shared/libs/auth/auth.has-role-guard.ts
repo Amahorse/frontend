@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { jwtClaimsService, Role } from '../token/jwt.service';
 import { JwtPayload } from 'jwt-decode';
-//import { authService } from './auth.service';
+//import { AuthService } from './auth.service';
 //import { Role } from './role';
 
 //DOCUMENATION: https://medium.com/@filipejohansson/how-to-protect-your-routes-in-angular-795c888cc21e

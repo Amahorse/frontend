@@ -16,7 +16,7 @@ export const authUrl = "http://api.amahorse.localhost" + '/oauth/token?client_id
 @Injectable(
   { providedIn: 'root' }
 )
-export class authService {
+export class AuthService {
 
   constructor(private http: HttpClient) { }
 

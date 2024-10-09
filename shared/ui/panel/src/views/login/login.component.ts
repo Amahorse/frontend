@@ -6,7 +6,7 @@ import { CommonModule, NgStyle, JsonPipe } from '@angular/common';
 import { IconDirective } from '@coreui/icons-angular';
 import { FormLabelDirective, FormFeedbackComponent, ContainerComponent, RowComponent, ColComponent, CardGroupComponent, TextColorDirective, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, FormControlDirective, ButtonDirective } from '@coreui/angular-pro';
 import { ValidationFormsService } from '@shared/libs/forms/validation.service';
-import { authService } from '@shared/libs/auth/auth.service';
+import { AuthService } from '@shared/libs/auth/auth.service';
 import { LoadingComponent } from '@workspace/panel/components';
 import { AlertsService } from '@shared/ui/panel/src/services/alerts.service';
 
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   formControls!: string[];
 
   constructor(
-    private auth$: authService,
+    private auth$: AuthService,
     private router: Router,
     private formBuilder: FormBuilder,
     public validationFormsService: ValidationFormsService,

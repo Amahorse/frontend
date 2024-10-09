@@ -8,7 +8,7 @@ import { JwtPayload } from 'jwt-decode';
   providedIn: 'root',
 })
 
-export class SessionStorageJwtService implements IJwtClaimsService {
+export class LocalStorageJwtService implements IJwtClaimsService {
   // ------------------
   // TODO
   // da risolvere process
@@ -16,9 +16,9 @@ export class SessionStorageJwtService implements IJwtClaimsService {
   // protected readonly JWT_TOKEN = 'JWT_TOKEN';
   protected readonly JWT_TOKEN = 'AH_JWT';
   // ------------------
-  // TODO: mettere in localStorage perchè almeno rimane
+
   protected get storage(): Storage {
-    return sessionStorage;
+    return localStorage;
   }
 
   getClaims<T extends object>(): Nullable<T> {

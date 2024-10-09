@@ -4,7 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslationService } from '@shared/libs/language/translation.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { profileService } from '@elements/users/profile.service';
-import { authService } from '@shared/libs/auth/auth.service';
+import { AuthService } from '@shared/libs/auth/auth.service';
 import { Router } from '@angular/router';
 
 import {
@@ -65,7 +65,7 @@ export class DefaultHeaderComponent extends HeaderComponent {
     return this.colorModes.find(mode => mode.name === currentMode)?.icon ?? 'cilSun';
   });
 
-  constructor(profile$: profileService, private auth$: authService,  private router: Router) {
+  constructor(profile$: profileService, private auth$: AuthService,  private router: Router) {
     super();
 
     //TODO: se questa da errore buttare fuori

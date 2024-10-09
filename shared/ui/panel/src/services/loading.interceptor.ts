@@ -14,7 +14,9 @@ export const LoadingInterceptor: HttpInterceptorFn = (req, next) => {
     let alert = inject(AlertsService);
     let translate = inject(TranslateService);
 
-    if (!req.url.includes('./') && !req.url.includes('assets') && !req.url.includes('config') && !req.url.includes('token')) {
+    const excludedUrls = ['./', 'assets', 'config', 'token'];
+
+    if (!excludedUrls.some(url => req.url.includes(url))) {
         loading.setLoading(true, req.url);
     }
 
@@ -23,8 +25,10 @@ export const LoadingInterceptor: HttpInterceptorFn = (req, next) => {
       catchError((err) => {
         
         loading.setLoading(false, req.url);
-    
-        alert.addToast(translate.instant('messages.' + err.error.message));
+        
+        if(!excludedUrls.some(url => req.url.includes(url)) && typeof err.error.message !== 'undefined') {
+          alert.addToast(translate.instant('messages.' + err.error.message));
+        } 
 
         return throwError(() => err);
       }),

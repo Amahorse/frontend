@@ -1,6 +1,6 @@
 import { HttpHeaders, HttpInterceptorFn } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { authService, authUrl } from '../auth/auth.service';
+import { AuthService, authUrl } from '../auth/auth.service';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { Token } from '../token/token.interface';
@@ -12,7 +12,7 @@ export const AuthInterceptor: HttpInterceptorFn = (req, next) => {
     return next(req);
   }
 
-  const auth = inject(authService);
+  const auth = inject(AuthService);
 
   // ----------------------
   // TODO
