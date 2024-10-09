@@ -5,6 +5,7 @@ import { Product } from '@elements/store/products.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { cilPlus } from '@coreui/icons'; // Importa l'icona
 import { IconSetService, IconModule } from '@coreui/icons-angular'; // Importa IconSetService e IconModule
+import { DistinctCodePipe } from 'shared/pipes/distinct-code.pipe'; // Importa il pipe
 
 import {
   BorderDirective,
@@ -57,7 +58,8 @@ import {
     RowComponent,
     ColComponent,
     CollapseDirective,
-    IconModule, // Aggiungi IconModule qui
+    IconModule, 
+    DistinctCodePipe
   ],
 })
 export class ProductCardComponent {

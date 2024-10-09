@@ -51,13 +51,9 @@
         <h6>{{ product?.a1 }}</h6>
         <div class="color-icon-section">
           <div class="color-icon-wrapper">
-            <div
-              *ngFor="
-                let variant of product?.variants | keyvalue : DistinctCodePipe
-              "
-              class="color-info"
-            >
-              <h6>{{ variant?.a1_code }}</h6>
+            <div *ngFor="let variant of product?.variants | distinctCode:'a1_code'" class="color-info">
+              <h3>{{ variant?.a1_code }}</h3>
+           
             </div>
           </div>
         </div>
