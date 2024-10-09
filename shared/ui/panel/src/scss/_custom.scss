@@ -52,6 +52,8 @@
   color: var(--cui-white);
   margin-inline: 0;
   text-align: center;
+}
 
-
+.dropdown-item:hover, .dropdown-item:focus {
+  cursor:  pointer !important;
 }
