@@ -1,20 +1,20 @@
 {
-  "name": "admin",
+  "name": "partners",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/admin/src",
+  "sourceRoot": "apps/partners/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/admin",
-        "index": "apps/admin/src/index.html",
-        "browser": "apps/admin/src/main.ts",
+        "outputPath": "dist/apps/partners",
+        "index": "apps/partners/src/index.html",
+        "browser": "apps/partners/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/admin/tsconfig.app.json",
+        "tsConfig": "apps/partners/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
@@ -31,13 +31,13 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "10mb"
+              "maximumWarning": "2mb",
+              "maximumError": "5mb"
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "6kb",
+              "maximumError": "10kb"
             }
           ],
           "outputHashing": "all"
@@ -48,16 +48,16 @@
           "sourceMap": true
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "development"
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "admin:build:production"
+          "buildTarget": "partners:build:production"
         },
         "development": {
-          "buildTarget": "admin:build:development"
+          "buildTarget": "partners:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -65,7 +65,7 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "admin:build"
+        "buildTarget": "partners:build"
       }
     },
     "lint": {
