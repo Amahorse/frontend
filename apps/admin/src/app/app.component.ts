@@ -14,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [RouterOutlet, TranslateModule ]
 })
 export class AppComponent implements OnInit {
-  title = 'Amahorse Partners';
+  title = 'Amahorse Admin';
 
   readonly #destroyRef: DestroyRef = inject(DestroyRef);
   readonly #activatedRoute: ActivatedRoute = inject(ActivatedRoute);

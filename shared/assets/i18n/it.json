@@ -46,7 +46,10 @@
     "api_documentation" : "Documentazione API",
     "communication_kit" : "Kit Comunicazione",
     "profile" : "Profilo",
+    "users" : "Utenti",
     "user" : "Modifica Dati",
+    "new" : "Nuovo",
+    "list" : "Lista",
     "settings" : "Impostazioni",
     "logout" : "Esci"
   },

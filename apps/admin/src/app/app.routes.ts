@@ -24,81 +24,34 @@ export const routes: Routes = [
         path: 'dashboard',
         canActivate: [hasRoleGuard],    
         data: {
-          roles: [ 'user','administrator','superadministrator' ]
+          roles: [ 'administrator','superadministrator' ]
         }, 
         loadChildren: () => import('./views/dashboard/routes').then((m) => m.routes)
       },
-      {
-        path: 'new-order',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/new-order/routes').then((m) => m.routes)
-      },
-      {
-        path: 'orders-history',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/orders-history/routes').then((m) => m.routes)
-      },
-      {
-        path: 'listing-download',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/listing-download/routes').then((m) => m.routes)
-      },
-      {
-        path: 'statistics',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/statistics/routes').then((m) => m.routes)
-      },
-      {
-        path: 'dropshipping',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/dropshipping/routes').then((m) => m.routes)
-      },
+
       {
         path: 'api-docs',
         canActivate: [hasRoleGuard],
         data: {
-          roles: [ 'user','administrator','superadministrator' ]
+          roles: [ 'administrator','superadministrator' ]
         },
         loadChildren: () => import('./views/api-docs/routes').then((m) => m.routes)
-      },
-      {
-        path: 'help-center',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/help-center/routes').then((m) => m.routes)
-      },
-      {
-        path: 'communication-kit',
-        canActivate: [hasRoleGuard],
-        data: {
-          roles: [ 'user','administrator','superadministrator' ]
-        },
-        loadChildren: () => import('./views/communication-kit/routes').then((m) => m.routes)
       },
       {
         path: 'profile',
         canActivate: [hasRoleGuard],
         data: {
-          roles: [ 'user','administrator','superadministrator' ]
+          roles: ['administrator','superadministrator' ]
         },
         loadChildren: () => import('./views/profile/routes').then((m) => m.routes)
+      },
+      {
+        path: 'users',
+        canActivate: [hasRoleGuard],
+        data: {
+          roles: ['administrator','superadministrator' ]
+        },
+        loadChildren: () => import('./views/users/routes').then((m) => m.routes)
       }
     ]
   },

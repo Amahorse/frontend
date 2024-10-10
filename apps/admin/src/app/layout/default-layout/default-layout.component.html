@@ -7,10 +7,12 @@
   id="sidebar1"
   visible
 >
-  <c-sidebar-header class="bg-primary border-bottom">
+  <c-sidebar-header class="bg-dark border-bottom">
     <c-sidebar-brand cSidebarToggle="sidebar1" toggle="unfoldable" style="cursor: pointer;">
+    
       <svg [class]="{icon: false}" cIcon class="sidebar-brand-full" height="32" name="logo" title="CoreUI Logo"></svg>
       <svg cIcon class="sidebar-brand-narrow" height="32" name="signet" title="CoreUI Logo"></svg>
+    
     </c-sidebar-brand>
     <button cSidebarToggle="sidebar1"
             cButtonClose
@@ -33,7 +35,7 @@
   <!--app-header-->
   <app-default-header
     [cShadowOnScroll]="'sm'"
-    class="mb-4 d-print-none header header-sticky p-0 shadow-sm bg-primary"
+    class="mb-4 d-print-none header header-sticky p-0 shadow-sm bg-dark"
     position="sticky"
     sidebarId="sidebar1"
   />
@@ -44,11 +46,6 @@
       <router-outlet />
     </c-container>
   </div>
-  <!--app footer-->
-  <app-default-footer />
+
 </div>
-
-<!--aside-->
-<app-default-aside style="display: none;" />
-
 

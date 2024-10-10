@@ -23,7 +23,7 @@
             "output": "./assets"
           }
         ],
-        "styles": ["shared/ui/panel/src/scss/styles.scss", "node_modules/swagger-ui-dist/swagger-ui.css"],
+        "styles": ["apps/admin/src/styles.scss","shared/ui/panel/src/scss/styles.scss", "node_modules/swagger-ui-dist/swagger-ui.css"],
         "scripts": []
       },
       "configurations": {
