@@ -1,22 +1,23 @@
-export interface ProductVariant {
+interface ProductVariant {
     variant: string;
     sku: string;
     status: string;
-    collection: string | null;
+    collection: string;
+    collection_current: string;
     season: string | null;
-    color_primary: string | null;
+    color_primary: string;
     color_secondary: string | null;
-    a0_code: string | null;
+    a0_code: string;
     a0_description: string;
-    a0_order: string | null;
-    a1_code: string | null;
+    a0_order: number | null;
+    a1_code: string;
     a1_description: string;
-    a1_order: string | null;
+    a1_order: number | null;
     a4_code: string | null;
     a4_description: string | null;
-    a4_order: string | null;
-    cover: string | null;
-    cover_url: string | null;
+    a4_order: number | null;
+    cover: string;
+    cover_url: string;
     minimum_order: number;
     id_store_products: number;
     currency: string;
@@ -31,7 +32,19 @@ export interface ProductVariant {
     total_to_pay: string;
 }
 
-export interface ProductCategory {
+interface ProductSplits {
+    code: string;
+    order: number;
+    variants: {
+        [key: string]: ProductVariant;
+    };
+    collection: string;
+    cover: string;
+    cover_url: string;
+    discount_percentage: string;
+}
+
+interface ProductCategory {
     id_categories: number;
     category: string;
 }
@@ -41,20 +54,20 @@ export interface Product {
     season: string | null;
     code: string;
     family: string;
-    gender: string | null;
-    age: string | null;
-    type: string | null;
+    neutral_image: string | null;
+    neutral_image_url: string;
+    gender: string;
+    age: string;
+    type: string;
     material: string | null;
     tech: string;
     discipline: string | null;
-    a0: string | null;
-    a1: string | null;
+    a0: string;
+    a1: string;
     a4: string | null;
-    neutral_image: string | null;
-    neutral_image_url: string | null;
-    split: string | null;
-    brand: string | null;
-    brand_code: string | null;
+    split: string;
+    brand: string;
+    brand_code: string;
     slug: string;
     title: string;
     description: string | null;
@@ -65,6 +78,9 @@ export interface Product {
     size_fit: string | null;
     composition: string;
     info_care: string;
-    variants: ProductVariant[];
+    splits: ProductSplits;
+    price_min: string;
+    price_max: string;
+    availability_total: number;
     categories: ProductCategory[];
 }

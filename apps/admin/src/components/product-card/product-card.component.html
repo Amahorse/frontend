@@ -16,10 +16,10 @@
       <span>{{ product?.title }}</span>
     </c-col>
     <c-col xs="1">
-      <span>price</span>
+      <span>Da {{product?.price_min}} a {{product?.price_max}}</span>
     </c-col>
     <c-col xs="1">
-      <span>availability</span>
+      <span>{{product?.availability_total}}</span>
     </c-col>
     <c-col xs="2">
       <button
@@ -45,27 +45,36 @@
         />
       </div>
     </c-col>
-    <c-col *ngIf="product?.variants.length > 1" [xs]="8">
-      <ng-container *ngIf="product?.split == 'a0'">Split a0 </ng-container>
-      <ng-container *ngIf="product?.split == 'a1'">
-        <h6>{{ product?.a1 }}</h6>
+    <!-- SPLIT -->
+    
+
+        <h6 *ngIf="product?.split !== null">{{ product?.[product?.split] }}</h6>
         <div class="color-icon-section">
           <div class="color-icon-wrapper">
-            <div *ngFor="let variant of product?.variants | distinctCode:'a1_code'" class="color-info">
-              <h3>{{ variant?.a1_code }}</h3>
-           
+            <div *ngFor="let split of product?.splits" class="color-info">
+                <h3>{{ split.code }}</h3>
+                <span>{{split.collection_current}}</span>
+                <span>{{split.discount_percentage}}</span>
+              
+                <!-- NASCOSTO -->
+                <div *ngFor="let variant of split.variants" class="color-info">
+                  <ul class="list-inline">
+                    <li *ngIf="product?.split !== 'a0' && variant.a0_description !== null">{{variant.a0_description}}</li>
+                    <li *ngIf="product?.split !== 'a1' && variant.a1_description !== null">{{variant.a1_description}}</li>
+                    <li *ngIf="product?.split !== 'a4' && variant.a4_description !== null">{{variant.a4_description}}</li>
+                  </ul>
+                </div>
+                <!-- NASCOSTO -->
             </div>
           </div>
         </div>
-      </ng-container>
-      <ng-container *ngIf="product?.split == 'a4'">Split A4 </ng-container>
-      <ng-container *ngIf="product?.split == null">No split </ng-container>
-    </c-col>
-    <c-col *ngIf="product?.variants.length == 1" [xs]="8">
-      <div>Prodotto senza varianti</div>
-    </c-col>
+
+ 
+    <!-- NO SPLIT -->
+
+
     <c-col [xs]="2">
-      <div>aggiungi</div>
+      <div>aggiungi</div>  
     </c-col>
   </c-row>
 </c-card>

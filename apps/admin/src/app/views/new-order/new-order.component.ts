@@ -17,7 +17,7 @@ export class NewOrderComponent {
 
   constructor(private b2b: B2bService) {
     this.b2b
-      .list({ brand_code: 'ET', id_categories: 1978 })
+      .list({ brand_code: 'AC' })
       .subscribe((products) => {
         this.products = products;
       });
