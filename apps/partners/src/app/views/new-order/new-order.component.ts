@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { B2bService } from '@elements/store/b2b.service';
-import { ProductCardComponent } from 'apps/admin/src/components/product-card/product-card.component';
+import { ProductCardComponent } from 'apps/partners/src/components/product-card/product-card.component';
 import { ContainerComponent, GridModule } from '@coreui/angular-pro';
 
 @Component({
